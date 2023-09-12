@@ -1,0 +1,102 @@
+<!-- <div class="genre-cart">
+  <h2>Horror</h2>
+  <div class="book-card" *ngFor="let book of horrorBooks">
+    <app-book-details [book]="selectedBook"></app-book-details>
+    <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
+    <h3>{{ book.title }}</h3>
+    <button (click)="showDescription(book)">Mostra Descrizione</button>
+    <button (click)="addToCart(book)">Aggiungi al Carrello</button>
+    <div class="book-description" *ngIf="book.showDescription">
+      <a [href]="bookInfo.infoLink" target="_blank">Scopri di più</a>
+    </div>
+  </div>
+</div>
+<div class="genre-cart">
+  <h2>FANTASY</h2>
+  <div class="book-card" *ngFor="let book of fantasyBooks">
+    <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
+    <h3>{{ book.title }}</h3>
+    <button (click)="showDescription(book)">Mostra Descrizione</button>
+    <button (click)="addToCart(book)">Aggiungi al Carrello</button>
+    <div class="book-description" *ngIf="book.showDescription">
+      <p>{{ book.description || "Descrizione non disponibile." }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="genre-cart">
+  <h2>Avventura</h2>
+  <div class="book-card" *ngFor="let book of adventureBooks">
+    <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
+    <h3>{{ book.title }}</h3>
+    <button (click)="showDescription(book)">Mostra Descrizione</button>
+    <button (click)="addToCart(book)">Aggiungi al Carrello</button>
+    <div class="book-description" *ngIf="book.showDescription">
+      <p>{{ book.description || "Descrizione non disponibile." }}</p>
+    </div>
+  </div>
+</div>
+
+Ripeti lo stesso per i generi fantasy e avventura -->
+
+<div class="genre-cart">
+  <h2>Horror</h2>
+  <div
+    class="book-card"
+    *ngFor="let book of genres['horror'].booksWithDescription"
+  >
+    <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
+    <h3>{{ book.title }}</h3>
+    <button (click)="showDetails(book)">Dettagli</button>
+    <button (click)="addToCart(book)">Aggiungi al Carrello</button>
+  </div>
+</div>
+
+<div class="genre-cart">
+  <h2>Horror</h2>
+  <div
+    class="book-card"
+    *ngFor="let book of genres['horror'].booksWithDescription"
+  >
+    <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
+    <h3>{{ book.title }}</h3>
+    <p *ngIf="showDetails">{{ book.description }}</p>
+    <button (click)="showDetails(book)">Dettagli</button>
+    <button (click)="addToCart(book)">Aggiungi al Carrello</button>
+  </div>
+</div>
+<div class="genre-cart">
+  <h2>Fantasy</h2>
+  <div
+    class="book-card"
+    *ngFor="let book of genres['fantasy'].booksWithDescription"
+  >
+    <div
+      class="book-card"
+      *ngFor="let book of genres['fantasy'].booksWithDescription"
+    >
+      <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
+      <h3>{{ book.title }}</h3>
+      <button (click)="showDetails(book)">Dettagli</button>
+      <button (click)="addToCart(book)">Aggiungi al Carrello</button>
+    </div>
+  </div>
+
+  <div class="genre-cart">
+    <h2>Avventura</h2>
+    <div
+      class="book-card"
+      *ngFor="let book of genres['avventura'].booksWithDescription"
+    >
+      <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
+      <h3>{{ book.title }}</h3>
+      <button (click)="showDetails(book)">Dettagli</button>
+      <button (click)="addToCart(book)">Aggiungi al Carrello</button>
+      <button [routerLink]="['/carrello']">Visualizza Carrello</button>
+    </div>
+  </div>
+
+  <div *ngIf="selectedBook">
+    <!-- <app-book-details [book]="selectedBook"></app-book-details> -->
+  </div>
+</div>

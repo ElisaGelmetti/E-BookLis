@@ -1,0 +1,6 @@
+<div *ngIf="bookInfo">
+  <h1>{{ bookInfo.title }}</h1>
+  <img [src]="bookInfo.imageLinks?.thumbnail" alt="Copertina del libro" />
+  <p>{{ bookInfo.description }}</p>
+  <a [href]="bookInfo.infoLink" target="_blank">Scopri di più</a>
+</div>
