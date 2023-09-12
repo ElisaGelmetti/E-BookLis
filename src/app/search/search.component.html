@@ -1,0 +1,21 @@
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Cerca libri..." />
+  <button (click)="searchBooks()">Cerca</button>
+</div>
+
+<div class="results-container">
+  <div *ngFor="let book of searchResults">
+    <div class="book">
+      <img
+        [src]="book.volumeInfo.imageLinks?.thumbnail"
+        alt="Copertina del libro"
+      />
+      <h3>{{ book.volumeInfo.title }}</h3>
+      <p>Autore: {{ book.volumeInfo.authors?.join(", ") || "Sconosciuto" }}</p>
+      <p *ngIf="showDescription">
+        {{ book.volumeInfo.description || "Nessuna descrizione disponibile" }}
+      </p>
+      <button (click)="addToCart(book)">Aggiungi al Carrello</button>
+    </div>
+  </div>
+</div>

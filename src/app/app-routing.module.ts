@@ -12,7 +12,11 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'cart', component: CartComponent },
-
+  { path: 'book-detail', component: BookDetailsComponent },
+  {
+    path: 'book-details/:title/:authors/:publisher/:publishedDate/:description',
+    component: BookDetailsComponent,
+  },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'card', component: CardComponent },

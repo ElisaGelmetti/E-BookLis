@@ -77,4 +77,11 @@ export class CardComponent implements OnInit {
     this.cartItems.push(book); // Aggiungi il libro al carrello
     console.log('Aggiunto al carrello:', book);
   }
+  viewBookDetails(book: any) {
+    // Qui dovresti costruire l'URL con i parametri necessari dal tuo oggetto book
+    const url = `/book-details/${book.title}/${book.authors}/${book.publisher}/${book.publishedDate}/${book.description}`;
+
+    // Ora puoi navigare verso la pagina dei dettagli del libro
+    this.router.navigate([url]);
+  }
 }
