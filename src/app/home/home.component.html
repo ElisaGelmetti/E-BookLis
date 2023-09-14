@@ -1,85 +1,30 @@
-<!-- <div class="container">
-  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <ng-template ngbSlide *ngFor="let book of books; let i = index">
-        <div class="carousel-item" [class.active]="i === 0">
-          <img
-            [src]="book.imageUrl"
-            class="d-block w-50 mx-auto"
-            alt="Book Image"
-          />
-          <div class="carousel-caption">
-            <h5>{{ book.title }}</h5>
-            <p>{{ book.author }}</p>
-          </div>
-        </div>
-      </ng-template>
-    </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselExample"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselExample"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
-<header class="mainHeading">
-  <div class="mainHeading__content">
-    <article class="mainHeading__text">
-      <p class="mainHeading__preTitle">J.W Rowling</p>
-      <h2 class="mainHeading__title">Harry Potter</h2>
-      <p class="mainHeading__description">
-        {{ libro.volumeInfo.authors }}
-
-        A 11 anni, Harry Potter scopre di essere il figlio orfano di due potenti
-        maghi. Frequenta la scuola di magia e stregoneria di Hogwarts dove
-        scopre la verità su se stesso e sulla morte dei suoi genitori..
-      </p>
-      <button class="cta">Leggi ancora</button>
-    </article>
-
-    <figure class="mainHeading__image">
-      <img
-        src="https://www.fatepergioco.org/uploads/1/4/5/9/14590916/rehost-2f2016-2f9-2f13-2f70371c31-7d4c-4b46-839f-3225d06f8f99_1_orig.jpg"
-        alt=""
-      />
-    </figure>
-  </div>
-</header> -->
-
 <ngb-carousel>
   <ng-template ngbSlide *ngFor="let book of books">
     <header class="mainHeading">
       <div class="mainHeading__content">
         <article class="mainHeading__text">
-          <img [src]="book.imageUrl" alt="Immagine libro" width="140px" />
-          <div class="carousel-caption">
-            <h3 class="mainHeading__title">{{ book.title }}</h3>
-            <p class="mainHeading__preTitle">{{ book.author }}</p>
-          </div>
-          <p class="mainHeading__description">{{ book.dettagli }}</p>
+          <p class="mainHeading__preTitle">{{ book.author }}</p>
+          <h2 class="mainHeading__title">{{ book.title }}</h2>
+
+          <p class="mainHeading__description">
+            {{ book.dettagli }}
+          </p>
           <button class="cta">Leggi ancora</button>
         </article>
       </div>
     </header>
   </ng-template>
 </ngb-carousel>
-
-<div *ngIf="bookInfo">
-  <h1>{{ bookInfo.title }}</h1>
-  <img [src]="bookInfo.imageLinks?.thumbnail" alt="Copertina del libro" />
-  <p>{{ bookInfo.description }}</p>
-  <a [href]="bookInfo.infoLink" target="_blank">Scopri di più</a>
-</div>
+<!--
+<header class="mainHeading">
+  <div class="mainHeading__content">
+    <article class="mainHeading__text">
+      <div *ngIf="bookInfo">
+        <h1>{{ bookInfo.title }}</h1>
+        <img [src]="bookInfo.imageLinks?.thumbnail" alt="Copertina del libro" />
+        <p>{{ bookInfo.description }}</p>
+        <a [href]="bookInfo.infoLink" target="_blank">Scopri di più</a>
+      </div>
+    </article>
+  </div>
+</header> -->

@@ -158,7 +158,8 @@ $m-02: #454547;
 }
 
 * {
-  margin: 9px;
+  margin: 0px;
+  margin-top: 0px;
   padding: 0;
   list-style: none;
   border: 0;
@@ -213,11 +214,12 @@ body {
     letter-spacing: 1px;
     font-size: 14px;
     margin-left: 20px;
-    font-weight: 600;
+    font-weight: 700;
     box-shadow: inset 0px -10px 0px rgba(white, 0.5);
     transition: all 0.4s ease, transform 0.2s ease;
     padding: 2px 4px;
     transform: translateY(0px);
+    text-transform: uppercase;
 
     &:hover {
       transform: translateY(-5px);

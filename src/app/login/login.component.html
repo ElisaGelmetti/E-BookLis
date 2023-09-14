@@ -1,1 +1,64 @@
-<p>login works!</p>
+<body>
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true" />
+
+    <div class="signup">
+      <form (ngSubmit)="onSubmit()">
+        <div>
+          <label for="chk" aria-hidden="true">Sign up</label>
+          <input
+            type="text"
+            placeholder="User name"
+            name="txt"
+            [(ngModel)]="formData.username"
+            required
+          />
+        </div>
+
+        <div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            [(ngModel)]="formData.email"
+            required
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            name="pswd"
+            placeholder="Password"
+            [(ngModel)]="formData.password"
+            required
+          />
+        </div>
+
+        <button type="submit">Sign up</button>
+      </form>
+    </div>
+
+    <div class="login">
+      <form>
+        <label class="testo" for="chk" aria-hidden="true">Login</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          [(ngModel)]="formData.email"
+          required=""
+        />
+        <input
+          type="password"
+          name="pswd"
+          placeholder="Password"
+          [(ngModel)]="formData.password"
+          required=""
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+<a routerLink="/" class="mainNav__link">Home</a>

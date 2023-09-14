@@ -1,32 +1,60 @@
-// .genre-cart {
-//   display: flex;
-//   align-items: center;
-//   gap: 10px;
-//   margin-bottom: 20px;
-// }
+/* Stile delle card */
 
-// .book-card {
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 20px;
-// }
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.card {
+  border: 1px solid #ccc;
+  margin: 20px 0; /* Margini superiori e inferiori per separare le righe di generi */
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 250px;
+}
 
-// .book {
-//   border: 1px solid #ccc;
-//   padding: 10px;
-//   width: 300px;
-// }
+.card img {
+  max-width: 25%;
+  height: auto;
+}
 
-// img {
-//   max-width: 100%;
-//   height: auto;
-// }
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
 
-// button {
-//   margin-top: 10px;
-//   background-color: #007bff;
-//   color: #fff;
-//   border: none;
-//   padding: 5px 10px;
-//   cursor: pointer;
-// }
+.card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Stile del bottone "Carrello" */
+.cart-button {
+  position: relative;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cart-button::before {
+  content: "\f07a"; /* Unicode del simbolo della freccia destra (Font Awesome) */
+  font-family: FontAwesome;
+  margin-right: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cart-button:hover {
+  background-color: #0056b3;
+  transform: translateX(
+    -10px
+  ); /* Sposta il bottone a sinistra al passaggio del mouse */
+}
+
+.cart-button:hover::before {
+  transform: rotateY(180deg) translateX(10px); /* Ruota e sposta il simbolo */
+}

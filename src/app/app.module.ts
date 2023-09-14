@@ -22,6 +22,7 @@ import {
   NgbSlideEventSource,
 } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
+import { HorrorComponent } from './horror/horror.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { NgFor } from '@angular/common';
     CardComponent,
     BookDetailsComponent,
     CarrelloComponent,
+    HorrorComponent,
   ],
   imports: [
     BrowserModule,
