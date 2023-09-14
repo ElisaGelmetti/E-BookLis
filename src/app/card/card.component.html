@@ -88,35 +88,34 @@ Ripeti lo stesso per i generi fantasy e avventura -->
   </div>
 </div> -->
 
-<!-- ESEMPIO -->
+<!-- ESEMPIO:::::::::::::::::::::::::::::::::::::::::::: -->
+
 <div class="container">
   <div class="row">
     <div class="col">
-      <div class="genre-cart">
+      <div class="princing-table">
         <h2>Horror</h2>
-        <ngb-carousel *ngIf="genres['horror'].booksWithDescription.length > 0">
-          <ng-template
-            ngbSlide
+        <div class="card-deck d-flex flex-row flex-wrap">
+          <div
+            class="card"
             *ngFor="let book of genres['horror'].booksWithDescription"
           >
-            <div class="card">
-              <img
-                [src]="book.imageLinks?.thumbnail"
-                class="card-img-top"
-                alt="Copertina del libro"
-              />
-              <div class="card-body">
-                <h3 class="card-title">{{ book.title }}</h3>
-                <button class="btn btn-primary" (click)="showDetails(book)">
-                  Dettagli
-                </button>
-                <button class="btn btn-success" (click)="addToCart(book)">
-                  Aggiungi al Carrello
-                </button>
-              </div>
+            <img
+              [src]="book.imageLinks?.thumbnail"
+              class="card-img-top"
+              alt="Copertina del libro"
+            />
+            <div class="card-body">
+              <h3 class="card-title">{{ book.title }}</h3>
+              <button class="btn btn-primary" (click)="showDetails(book)">
+                Dettagli
+              </button>
+              <button class="btn btn-success" (click)="addToCart(book)">
+                Aggiungi al Carrello
+              </button>
             </div>
-          </ng-template>
-        </ngb-carousel>
+          </div>
+        </div>
         <button class="cart-button" [routerLink]="['/carrello']">
           Visualizza Carrello
         </button>
@@ -132,23 +131,25 @@ Ripeti lo stesso per i generi fantasy e avventura -->
 
   <div class="genre-cart">
     <h2>FANTASY</h2>
-    <div
-      class="card"
-      *ngFor="let book of genres['fantasy'].booksWithDescription"
-    >
-      <img
-        [src]="book.imageLinks?.thumbnail"
-        class="card-img-top"
-        alt="Copertina del libro"
-      />
-      <div class="card-body">
-        <h3 class="card-title">{{ book.title }}</h3>
-        <button class="btn btn-primary" (click)="showDetails(book)">
-          Dettagli
-        </button>
-        <button class="btn btn-success" (click)="addToCart(book)">
-          Aggiungi al Carrello
-        </button>
+    <div class="card-deck d-flex flex-row flex-wrap">
+      <div
+        class="card"
+        *ngFor="let book of genres['fantasy'].booksWithDescription"
+      >
+        <img
+          [src]="book.imageLinks?.thumbnail"
+          class="card-img-top"
+          alt="Copertina del libro"
+        />
+        <div class="card-body">
+          <h3 class="card-title">{{ book.title }}</h3>
+          <button class="btn btn-primary" (click)="showDetails(book)">
+            Dettagli
+          </button>
+          <button class="btn btn-success" (click)="addToCart(book)">
+            Aggiungi al Carrello
+          </button>
+        </div>
       </div>
     </div>
     <button class="cart-button" [routerLink]="['/carrello']">
@@ -164,23 +165,25 @@ Ripeti lo stesso per i generi fantasy e avventura -->
 
   <div class="genre-cart">
     <h2>Avventura</h2>
-    <div
-      class="card"
-      *ngFor="let book of genres['avventura'].booksWithDescription"
-    >
-      <img
-        [src]="book.imageLinks?.thumbnail"
-        class="card-img-top"
-        alt="Copertina del libro"
-      />
-      <div class="card-body">
-        <h3 class="card-title">{{ book.title }}</h3>
-        <button class="btn btn-primary" (click)="showDetails(book)">
-          Dettagli
-        </button>
-        <button class="btn btn-success" (click)="addToCart(book)">
-          Aggiungi al Carrello
-        </button>
+    <div class="card-deck d-flex flex-row flex-wrap">
+      <div
+        class="card"
+        *ngFor="let book of genres['avventura'].booksWithDescription"
+      >
+        <img
+          [src]="book.imageLinks?.thumbnail"
+          class="card-img-top"
+          alt="Copertina del libro"
+        />
+        <div class="card-body">
+          <h3 class="card-title">{{ book.title }}</h3>
+          <button class="btn btn-primary" (click)="showDetails(book)">
+            Dettagli
+          </button>
+          <button class="btn btn-success" (click)="addToCart(book)">
+            Aggiungi al Carrello
+          </button>
+        </div>
       </div>
     </div>
     <button class="cart-button" [routerLink]="['/carrello']">
@@ -188,13 +191,4 @@ Ripeti lo stesso per i generi fantasy e avventura -->
     </button>
   </div>
 </div>
-
-<!-- Alert per i dettagli -->
-<div class="alert alert-info" *ngIf="showDetailsAlert" role="alert">
-  <h4 class="alert-heading">{{ selectedBook.title }}</h4>
-  <p>{{ selectedBook.description }}</p>
-  <hr />
-  <button class="btn btn-primary" (click)="showDetailsAlert = false">
-    Chiudi
-  </button>
-</div>
+<!-- fdsfdsfs -->

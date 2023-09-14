@@ -1,6 +1,21 @@
-<h4 class="modal-title">{{ selectedBook?.title }}</h4>
-<img [src]="selectedBook?.imageLinks?.thumbnail" alt="Copertina del libro" />
-<p><strong>Titolo:</strong> {{ selectedBook?.title }}</p>
-<p><strong>Autore:</strong> {{ selectedBook?.authors }}</p>
-<p><strong>Data di pubblicazione:</strong> {{ selectedBook?.publishedDate }}</p>
-<p><strong>Descrizione:</strong> {{ selectedBook?.description }}</p>
+<div class="modal-header">
+  <h4 class="modal-title">{{ book.volumeInfo.title }}</h4>
+  <button type="button" class="close" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <!-- Visualizza i dettagli del libro qui -->
+  <p>Autore: {{ book.volumeInfo.authors }}</p>
+  <p>Data di pubblicazione: {{ book.volumeInfo.publishedDate }}</p>
+  <!-- Aggiungi altri dettagli secondo le tue esigenze -->
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-secondary"
+    (click)="activeModal.dismiss()"
+  >
+    Chiudi
+  </button>
+</div>

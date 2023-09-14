@@ -1,0 +1,14 @@
+<div class="container mt-4">
+  <div class="card">
+    <img
+      [src]="bookDetails?.volumeInfo.imageLinks?.thumbnail"
+      class="card-img-top"
+      alt="Copertina"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ bookDetails?.volumeInfo.title }}</h5>
+      <p class="card-text">{{ bookDetails?.volumeInfo.description }}</p>
+      <!-- Aggiungi altre informazioni del libro qui -->
+    </div>
+  </div>
+</div>

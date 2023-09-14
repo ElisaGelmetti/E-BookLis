@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BookService {
+  addToCart(book: any) {
+    throw new Error('Method not implemented.');
+  }
   private apiUrl = 'https://www.googleapis.com/books/v1/volumes';
 
   constructor(private http: HttpClient) {}

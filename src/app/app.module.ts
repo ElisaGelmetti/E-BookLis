@@ -22,9 +22,13 @@ import {
   NgbSlideEventSource,
 } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 import { BookDetailsModalComponent } from './book-details-modal/book-details-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HorrorComponent } from './generi/horror/horror.component';
+import { FantasyComponent } from './generi/fantasy/fantasy.component';
+import { AvventuraComponent } from './generi/avventura/avventura.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CarrelloComponent,
 
     BookDetailsModalComponent,
+     HorrorComponent,
+     FantasyComponent,
+     AvventuraComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +59,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbCarouselModule,
     NgFor,
     NgbModule,
+    CommonModule,
   ],
   providers: [BookService, CartService],
   bootstrap: [AppComponent],

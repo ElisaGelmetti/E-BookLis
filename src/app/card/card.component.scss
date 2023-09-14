@@ -1,21 +1,23 @@
 /* Stile delle card */
-
-.container {
+.card-deck {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
+
 .card {
   border: 1px solid #ccc;
-  margin: 20px 0; /* Margini superiori e inferiori per separare le righe di generi */
-  padding: 20px;
+  margin: 10px;
+  padding: 10px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  width: 250px;
+  width: calc(20% - 20px); /* Imposta la larghezza delle card */
+  flex-grow: 1;
 }
 
 .card img {
-  max-width: 25%;
+  max-width: 100%;
   height: auto;
 }
 
