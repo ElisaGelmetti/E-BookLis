@@ -9,7 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CardComponent } from './card/card.component';
-import { BookDetailsComponent } from './book-details/book-details.component';
+
 import { CarrelloComponent } from './carrello/carrello.component';
 import { CartService } from './cart.service';
 import { RouterModule } from '@angular/router';
@@ -22,7 +22,9 @@ import {
   NgbSlideEventSource,
 } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
-import { HorrorComponent } from './horror/horror.component';
+
+import { BookDetailsModalComponent } from './book-details-modal/book-details-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,10 @@ import { HorrorComponent } from './horror/horror.component';
     SearchComponent,
     LoginComponent,
     CardComponent,
-    BookDetailsComponent,
+
     CarrelloComponent,
-    HorrorComponent,
+
+    BookDetailsModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ import { HorrorComponent } from './horror/horror.component';
     FormsModule,
     NgbCarouselModule,
     NgFor,
+    NgbModule,
   ],
   providers: [BookService, CartService],
   bootstrap: [AppComponent],
