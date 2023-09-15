@@ -1,24 +1,53 @@
-/* Stile delle card */
-.card-deck {
+// @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+/* Stili di base per il corpo della pagina */
+body {
+  background: #333745;
+  color: #fff;
+  font-family: "Arimo", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 1px rgba(51, 55, 69, 0.6);
+  margin: 0; /* Rimuove il margine predefinito */
+  padding: 0; /* Rimuove il padding predefinito */
+}
+
+/* Stili per il layout */
+.row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: row;
+}
+
+/* Stili per la tabella dei prezzi */
+.pricing-table {
+  position: relative; /* Modifica la posizione iniziale */
+  margin-top: 20px; /* Aggiunge uno spazio sopra la tabella dei prezzi */
+  text-align: center; /* Allinea il testo al centro */
 }
 
 .card {
-  border: 1px solid #ccc;
-  margin: 10px;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  width: calc(20% - 20px); /* Imposta la larghezza delle card */
-  flex-grow: 1;
+  width: 220px;
+  height: 400px; /* Aumenta l'altezza della card */
+  padding: 30px;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 46px -4px rgba(0, 0, 0, 0.6);
+  transition: all 0.2s ease-in-out;
+  margin: 12px;
+  background: #f2d7bf; /* Aggiunge un colore di sfondo bianco */
+  color: #333745; /* Cambia il colore del testo */
+  text-align: center; /* Allinea il testo al centro */
+  font-size: 1.25rem;
 }
 
 .card img {
   max-width: 100%;
-  height: auto;
+  max-height: 60%; /* Limita l'altezza dell'immagine all'interno della card */
+  object-fit: cover; /* Mantiene le proporzioni e ritaglia l'immagine */
 }
 
 .card h3 {
@@ -31,32 +60,52 @@
   color: #666;
 }
 
-/* Stile del bottone "Carrello" */
-.cart-button {
-  position: relative;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+.card-button {
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  position: absolute;
+  width: 90%;
+  bottom: 15px; /* Sposta il pulsante in basso */
+  left: 5%; /* Centra il pulsante orizzontalmente */
+  background-color: #0056b3; /* Cambia il colore di sfondo */
+  border: none; /* Rimuove il bordo */
+  border-radius: 5px; /* Aggiunge un bordo arrotondato */
+  color: #fff;
+  padding: 8px 16px; /* Aggiunge spazio interno al pulsante */
+  font-size: 0.875rem; /* Riduce la dimensione del testo */
+  text-transform: uppercase;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.cart-button::before {
-  content: "\f07a"; /* Unicode del simbolo della freccia destra (Font Awesome) */
-  font-family: FontAwesome;
-  margin-right: 10px;
-  transition: all 0.3s ease-in-out;
+.card-button:hover {
+  background-color: #003f80; /* Cambia il colore di sfondo al passaggio del mouse */
 }
 
-.cart-button:hover {
-  background-color: #0056b3;
-  transform: translateX(
-    -10px
-  ); /* Sposta il bottone a sinistra al passaggio del mouse */
+/* Keyframes per l'animazione del testo del prezzo */
+@keyframes text-hover {
+  0% {
+    right: -30%;
+  }
+  50% {
+    right: -37%;
+  }
+  100% {
+    right: -30%;
+  }
+}
+button {
+  border: none;
+  font-size: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: -10px; /* Aggiungi spazio tra il titolo e il bottone */
+  background-color: transparent;
+  color: black;
+}
+button:hover {
+  text-decoration: none; /* Rimuovi la sottolineatura quando il bottone è in hover */
 }
 
-.cart-button:hover::before {
-  transform: rotateY(180deg) translateX(10px); /* Ruota e sposta il simbolo */
+p {
+  display: none; /* Nascondi il testo del paragrafo */
 }

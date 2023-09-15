@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
       dettagli:
         'Una terribile minaccia incombe sulla Scuola di Magia e Stregoneria di Hogwarts. Sirius Black, il famigerato assassino, è evaso dalla prigione di Azkaban. È in caccia e la sua preda è proprio a Hogwarts, dove Harry e i suoi amici stanno per cominciare il loro terzo anno.',
       imageUrl:
-        'https://www.lafeltrinelli.it/images/9788869186127_0_536_0_75.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAjWDGpQIoiNONd_34O8NP841da_eYuCfZwn5NQrJP6o6d18c0jaui02Zqzh-87g8XrTY&usqp=CAU',
     },
     {
       title: 'Twilight',
@@ -41,8 +41,7 @@ export class HomeComponent implements OnInit {
       author: 'Micheal Crichton',
       dettagli:
         "Dopo ventiquattr'ore è morto e il suo corpo viene cremato dalle uniche persone che sembrano conoscerlo. All'altro capo del mondo una squadra di archeologi è al lavoro sulle rovine di un villaggio medievale della Dordogna, dove scopre una stanza rimasta sigillata per oltre seicento anni'",
-      imageUrl:
-        'https://m.media-amazon.com/images/I/31VNbTqmu6L._AC_UF1000,1000_QL80_.jpg',
+      imageUrl: 'https://www.ibs.it/images/9788811681038_0_200_0_75.jpg',
     },
     // Aggiungi altri libri secondo necessità
   ];

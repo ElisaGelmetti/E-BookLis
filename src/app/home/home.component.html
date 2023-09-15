@@ -2,6 +2,9 @@
   <ng-template ngbSlide *ngFor="let book of books">
     <header class="mainHeading">
       <div class="mainHeading__content">
+        <div class="mainHeading__image">
+          <img [src]="book.imageUrl" alt="Copertina del libro" />
+        </div>
         <article class="mainHeading__text">
           <p class="mainHeading__preTitle">{{ book.author }}</p>
           <h2 class="mainHeading__title">{{ book.title }}</h2>

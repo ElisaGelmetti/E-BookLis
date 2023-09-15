@@ -113,6 +113,47 @@ Ripeti lo stesso per i generi fantasy e avventura -->
               <button class="btn btn-success" (click)="addToCart(book)">
                 Aggiungi al Carrello
               </button>
+              <!-- Dettaglio del libro -->
+              <div class="container mt-4" *ngIf="selectedBook">
+                <div class="row">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h2 class="card-title">{{ selectedBook.title }}</h2>
+                        <img
+                          [src]="selectedBook.imageLinks?.thumbnail"
+                          class="card-img-top"
+                          alt="Copertina del libro"
+                        />
+                        <p class="card-text">
+                          Descrizione:
+                          {{
+                            selectedBook.description ||
+                              "Nessuna descrizione disponibile."
+                          }}
+                        </p>
+                        <button
+                          class="btn btn-primary"
+                          (click)="selectedBook = null"
+                        >
+                          Chiudi Dettagli
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Alert se il libro non è presente -->
+              <div class="container mt-4" *ngIf="!selectedBook">
+                <div class="row">
+                  <div class="col">
+                    <div class="alert alert-danger">
+                      Il libro non è presente.
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -146,9 +187,16 @@ Ripeti lo stesso per i generi fantasy e avventura -->
           <button class="btn btn-primary" (click)="showDetails(book)">
             Dettagli
           </button>
-          <button class="btn btn-success" (click)="addToCart(book)">
-            Aggiungi al Carrello
-          </button>
+          <!-- Esempio di chiamata alla funzione addToCart con un libro come argomento -->
+          <div
+            class="card"
+            *ngFor="let book of genres['horror'].booksWithDescription"
+          >
+            <!-- ... altre parti del tuo codice ... -->
+            <button class="btn btn-success" (click)="addToCart(book)">
+              Aggiungi al Carrello
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -191,4 +239,4 @@ Ripeti lo stesso per i generi fantasy e avventura -->
     </button>
   </div>
 </div>
-<!-- fdsfdsfs -->
+fdsfdsfs

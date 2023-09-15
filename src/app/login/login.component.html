@@ -3,7 +3,7 @@
     <input type="checkbox" id="chk" aria-hidden="true" />
 
     <div class="signup">
-      <form (ngSubmit)="onSubmit()">
+      <form [formGroup]="homeform" (ngSubmit)="onSubmit()">
         <div>
           <label for="chk" aria-hidden="true">Sign up</label>
           <input
@@ -13,6 +13,11 @@
             [(ngModel)]="formData.username"
             required
           />
+          <p
+            *nhIf="!homeform.get('nome').valid && homeform.get('nome'); touched"
+          >
+            Iserisci nome
+          </p>
         </div>
 
         <div>
@@ -39,7 +44,7 @@
     </div>
 
     <div class="login">
-      <form>
+      <form #homeform="ngForm" (ngSubmit)="onSubmit(homeform)">
         <label class="testo" for="chk" aria-hidden="true">Login</label>
         <input
           type="email"
@@ -47,6 +52,7 @@
           placeholder="Email"
           [(ngModel)]="formData.email"
           required=""
+          ngModel
         />
         <input
           type="password"
@@ -54,8 +60,9 @@
           placeholder="Password"
           [(ngModel)]="formData.password"
           required=""
+          ngModel
         />
-        <button type="submit">Login</button>
+        <button type="submit" [disabled]="homeform.valid">Login</button>
       </form>
     </div>
   </div>

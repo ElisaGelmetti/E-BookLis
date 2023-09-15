@@ -7,12 +7,13 @@ import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
 import { CarrelloComponent } from './carrello/carrello.component';
 import { CardComponent } from './card/card.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'cart', component: CartComponent },
 
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'card', component: CardComponent },
   { path: 'carrello', component: CarrelloComponent },

@@ -104,7 +104,7 @@ export class CardComponent implements OnInit {
   cartItems: any[] = [];
   selectedBook: any;
   showDetailsAlert: boolean = false;
-
+  descriptionsMissing: boolean = false;
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
@@ -123,6 +123,9 @@ export class CardComponent implements OnInit {
           this.genres[genre].booksWithDescription = data.items.map(
             (item: any) => item.volumeInfo
           );
+          this.descriptionsMissing = this.genres[
+            genre
+          ].booksWithDescription.every((book: any) => !book.description);
         }
       });
   }
@@ -131,11 +134,11 @@ export class CardComponent implements OnInit {
     if (book.description) {
       this.showDetailsAlert = true;
     } else {
-      // Mostra un alert se non ci sono dettagli disponibili
-      alert('Dettagli non disponibili per questo libro.');
+      if (this.descriptionsMissing) {
+        alert('Nessuna descrizione disponibile per i libri di questo genere.');
+      }
     }
   }
-
   addToCart(book: any) {
     this.cartItems.push(book);
     console.log('Aggiunto al carrello:', book);

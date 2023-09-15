@@ -9,7 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CardComponent } from './card/card.component';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CarrelloComponent } from './carrello/carrello.component';
 import { CartService } from './cart.service';
 import { RouterModule } from '@angular/router';
@@ -23,7 +23,7 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
 import { CommonModule } from '@angular/common';
-
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { BookDetailsModalComponent } from './book-details-modal/book-details-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HorrorComponent } from './generi/horror/horror.component';
@@ -42,9 +42,9 @@ import { AvventuraComponent } from './generi/avventura/avventura.component';
     CarrelloComponent,
 
     BookDetailsModalComponent,
-     HorrorComponent,
-     FantasyComponent,
-     AvventuraComponent,
+    HorrorComponent,
+    FantasyComponent,
+    AvventuraComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +60,7 @@ import { AvventuraComponent } from './generi/avventura/avventura.component';
     NgFor,
     NgbModule,
     CommonModule,
+    NgbModalModule,
   ],
   providers: [BookService, CartService],
   bootstrap: [AppComponent],

@@ -434,8 +434,22 @@ h1 {
   margin-top: 522px;
 }
 
-.img {
-  margin-left: 700px;
-  margin-top: 40px;
-  width: 500px;
+.mainHeading__content {
+  display: flex;
+  align-items: center;
+}
+.mainHeading__image {
+  // margin-left: -300px; /* Spazio tra l'immagine e il testo */
+  margin-right: 40px;
+  width: 40%; /* Riduci la larghezza dell'immagine al 30% del suo contenitore */
+  height: auto; /* Imposta l'altezza su 'auto' per mantenere l'aspetto originale */
+  top: 10px;
+  left: 600px;
+  overflow: hidden;
+}
+
+.mainHeading__image img {
+  max-width: 70%; /* Larghezza massima dell'immagine al 100% del suo contenitore */
+  max-height: 100%; /* Altezza massima dell'immagine al 100% del suo contenitore */
+  object-fit: cover;
 }
