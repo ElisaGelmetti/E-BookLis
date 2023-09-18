@@ -1,3 +1,648 @@
-h2 {
-  margin-top: 500px;
+.about {
+  $cubic: cubic-bezier(0.64, 0.01, 0.07, 1.65);
+  $transition: 0.6s $cubic;
+  $size: 40px;
+  position: fixed;
+  z-index: 10;
+  bottom: 10px;
+  right: 10px;
+  width: $size;
+  height: $size;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transition: all 0.2s ease;
+
+  .bg_links {
+    width: $size;
+    height: $size;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(#000000, 0.2);
+    border-radius: 100%;
+    backdrop-filter: blur(5px);
+    position: absolute;
+  }
+
+  .logo {
+    width: $size;
+    height: $size;
+    z-index: 9;
+    // background-image: url(https://rafaelavlucas.github.io/assets/codepen/logo_white.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 10px 7px;
+    opacity: 0.9;
+    transition: all 1s 0.2s ease;
+    bottom: 0;
+    right: 0;
+  }
+
+  .social {
+    opacity: 0;
+    right: 0;
+    bottom: 0;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+      display: flex;
+      transition: all 0.2s ease, background-color 0.4s ease;
+      opacity: 0;
+      border-radius: 100%;
+    }
+
+    // &.portfolio {
+    //   transition: all 0.8s ease;
+
+    //   .icon {
+    //     background-image: url(https://rafaelavlucas.github.io/assets/codepen/link.svg);
+    //   }
+    // }
+
+    // &.dribbble {
+    //   transition: all 0.3s ease;
+    //   .icon {
+    //     background-image: url(https://rafaelavlucas.github.io/assets/codepen/dribbble.svg);
+    //   }
+    // }
+
+    // &.linkedin {
+    //   transition: all 0.8s ease;
+    //   .icon {
+    //     background-image: url(https://rafaelavlucas.github.io/assets/codepen/linkedin.svg);
+    //   }
+    // }
+  }
+
+  &:hover {
+    width: 105px;
+    height: 105px;
+    transition: all $transition;
+
+    .logo {
+      transition: all 0.6s ease;
+    }
+
+    .social {
+      opacity: 1;
+
+      .icon {
+        opacity: 0.9;
+      }
+
+      &:hover {
+        background-size: 28px;
+        .icon {
+          background-size: 65%;
+          opacity: 1;
+        }
+      }
+
+      // &.portfolio {
+      //   right: 0;
+      //   bottom: calc(100% - 40px);
+      //   transition: all 0.3s 0s $cubic;
+      //   .icon {
+      //     &:hover {
+      //       background-color: #ef8e76;
+      //     }
+      //   }
+      // }
+
+      // &.dribbble {
+      //   bottom: 45%;
+      //   right: 45%;
+      //   transition: all 0.3s 0.15s $cubic;
+      //   .icon {
+      //     &:hover {
+      //       background-color: #ea4c89;
+      //     }
+      //   }
+      // }
+
+      &.linkedin {
+        bottom: 0;
+        right: calc(100% - 40px);
+        transition: all 0.3s 0.25s $cubic;
+        .icon {
+          &:hover {
+            background-color: #ef8e76;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap");
+
+$font-01: "Raleway", sans-serif;
+
+$gradient-01: linear-gradient(to top, #ef8e76 0%, #ffd7c9 100%);
+$gradient-02: linear-gradient(135deg, #ffd7c9 0%, #ef8e76 100%);
+
+$m-01: #4f4f51;
+$m-02: #454547;
+
+@mixin sm {
+  @media screen and (max-width: 799px) {
+    @content;
+  }
+}
+
+* {
+  margin: 0px;
+  margin-top: 0px;
+  padding: 0;
+  list-style: none;
+  border: 0;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+body {
+  font-family: $font-01;
+}
+
+.mainNav {
+  width: 100%;
+  height: 80px;
+
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: $m-01;
+
+  padding: 0 40px;
+  background: linear-gradient(135deg, #ffd7c9 0%, #ef8e76 100%);
+  @include sm {
+    padding: 0 20px;
+  }
+
+  &__logo {
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  &__link {
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-left: 20px;
+    font-weight: 700;
+    box-shadow: inset 0px -10px 0px rgba(white, 0.5);
+    transition: all 0.4s ease, transform 0.2s ease;
+    padding: 2px 4px;
+    transform: translateY(0px);
+    text-transform: uppercase;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: inset 0px -20px 0px white;
+    }
+  }
+
+  &__icon {
+    background-image: url(https://rafaelalucas91.github.io/assets/icons/black/icon-141.svg);
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+
+    @include sm {
+      display: block;
+    }
+  }
+}
+
+// PRECOMPILATI
+
+// @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+// $main-green: #ef8e76 !default;
+// $main-green-rgb-015: #f0b4a4 !default;
+// $main-yellow: #ef8e76 !default;
+// $main-yellow-rgb-015: #f0b4a4 !default;
+// $main-red: #ef8e76 !default;
+// $main-red-rgb-015: #f0b4a4 !default;
+// $main-blue: #ef8e76 !default;
+// $main-blue-rgb-015: #f0b4a4 !default;
+
+// /* This pen */
+// .body {
+//   font-family: "Baloo 2", cursive;
+//   font-size: 16px;
+//   color: #454547;
+//   text-rendering: optimizeLegibility;
+//   font-weight: initial;
+// }
+
+// a,
+// a:hover {
+//   text-decoration: none;
+//   transition: color 0.3s ease-in-out;
+// }
+
+// #pageHeaderTitle {
+//   margin: 2rem 0;
+//   text-transform: uppercase;
+//   text-align: center;
+//   font-size: 2.5rem;
+// }
+
+// /* Cards */
+// .postcard {
+//   flex-wrap: wrap;
+//   display: flex;
+
+//   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+//   border-radius: 10px;
+//   margin: 0 0 2rem 0;
+//   overflow: hidden;
+//   position: relative;
+//   color: #454547;
+
+//   &.light {
+//     background-color: #f3dbd4;
+//   }
+
+//   a {
+//     color: inherit;
+//   }
+
+//   h1,
+//   .h1 {
+//     margin-bottom: 0.5rem;
+//     font-weight: 500;
+//     line-height: 1.2;
+//     color: #454547;
+//   }
+
+//   .small {
+//     font-size: 80%;
+//   }
+
+//   .postcard__title {
+//     font-size: 1.75rem;
+//   }
+
+//   .postcard__img {
+//     max-height: 180px;
+//     width: 100%;
+//     object-fit: cover;
+//     position: relative;
+//   }
+
+//   .postcard__img_link {
+//     display: contents;
+//   }
+
+//   .postcard__bar {
+//     width: 50px;
+//     height: 10px;
+//     margin: 10px 0;
+//     border-radius: 5px;
+//     background-color: #f0b4a4;
+//     transition: width 0.2s ease;
+//   }
+
+//   .postcard__text {
+//     padding: 1.5rem;
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//   }
+
+//   .postcard__preview-txt {
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     text-align: justify;
+//     height: 100%;
+//   }
+
+//   .postcard__tagbox {
+//     display: flex;
+//     flex-flow: row wrap;
+//     font-size: 14px;
+//     margin: 20px 0 0 0;
+//     padding: 0;
+//     justify-content: center;
+
+//     .tag__item {
+//       display: inline-block;
+//       background: #dabaaf;
+//       border-radius: 3px;
+//       padding: 2.5px 10px;
+//       margin: 0 5px 5px 0;
+//       cursor: default;
+//       user-select: none;
+//       transition: background-color 0.3s;
+
+//       &:hover {
+//         background: red($color: #000000);
+//       }
+//     }
+//   }
+
+//   &:before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     background-image: linear-gradient(-70deg, #424242, transparent 50%);
+//     opacity: 1;
+//     border-radius: 10px;
+//   }
+
+//   &:hover .postcard__bar {
+//     width: 100px;
+//   }
+// }
+
+// @media screen and (min-width: 769px) {
+//   .postcard {
+//     flex-wrap: inherit;
+
+//     .postcard__title {
+//       font-size: 2rem;
+//     }
+
+//     .postcard__tagbox {
+//       justify-content: start;
+//     }
+
+//     .postcard__img {
+//       max-width: 300px;
+//       max-height: 100%;
+//       transition: transform 0.3s ease;
+//     }
+
+//     .postcard__text {
+//       padding: 3rem;
+//       width: 100%;
+//     }
+
+//     .media.postcard__text:before {
+//       content: "";
+//       position: absolute;
+//       display: block;
+//       background: #18151f;
+//       top: -20%;
+//       height: 130%;
+//       width: 55px;
+//     }
+
+//     &:hover .postcard__img {
+//       transform: scale(1.1);
+//     }
+
+//     &:nth-child(2n + 1) {
+//       flex-direction: row;
+//     }
+
+//     &:nth-child(2n + 0) {
+//       flex-direction: row-reverse;
+//     }
+
+//     &:nth-child(2n + 1) .postcard__text::before {
+//       left: -12px !important;
+//       transform: rotate(4deg);
+//     }
+
+//     &:nth-child(2n + 0) .postcard__text::before {
+//       right: -12px !important;
+//       transform: rotate(-4deg);
+//     }
+//   }
+// }
+// @media screen and (min-width: 1024px) {
+//   .postcard__text {
+//     padding: 2rem 3.5rem;
+//   }
+
+//   .postcard__text:before {
+//     content: "";
+//     position: absolute;
+//     display: block;
+
+//     top: -20%;
+//     height: 130%;
+//     width: 55px;
+//   }
+// }
+
+// /* COLORS */
+// .postcard .postcard__tagbox .green.play:hover {
+//   background: $main-green;
+//   color: black;
+// }
+// .green .postcard__title:hover {
+//   color: $main-green;
+// }
+// .green .postcard__bar {
+//   background-color: $main-green;
+// }
+// .green::before {
+//   background-image: linear-gradient(
+//     -30deg,
+//     $main-green-rgb-015,
+//     transparent 50%
+//   );
+// }
+// .green:nth-child(2n)::before {
+//   background-image: linear-gradient(
+//     30deg,
+//     $main-green-rgb-015,
+//     transparent 50%
+//   );
+// }
+
+// .postcard .postcard__tagbox .blue.play:hover {
+//   background: $main-blue;
+// }
+// .blue .postcard__title:hover {
+//   color: $main-blue;
+// }
+// .blue .postcard__bar {
+//   background-color: $main-blue;
+// }
+// .blue::before {
+//   background-image: linear-gradient(
+//     -30deg,
+//     $main-blue-rgb-015,
+//     transparent 50%
+//   );
+// }
+// .blue:nth-child(2n)::before {
+//   background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
+// }
+
+// .postcard .postcard__tagbox .red.play:hover {
+//   background: $main-red;
+// }
+// .red .postcard__title:hover {
+//   color: $main-red;
+// }
+// .red .postcard__bar {
+//   background-color: $main-red;
+// }
+// .red::before {
+//   background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
+// }
+// .red:nth-child(2n)::before {
+//   background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
+// }
+
+// .postcard .postcard__tagbox .yellow.play:hover {
+//   background: $main-yellow;
+//   color: black;
+// }
+// .yellow .postcard__title:hover {
+//   color: $main-yellow;
+// }
+// .yellow .postcard__bar {
+//   background-color: $main-yellow;
+// }
+// .yellow::before {
+//   background-image: linear-gradient(
+//     -30deg,
+//     $main-yellow-rgb-015,
+//     transparent 50%
+//   );
+// }
+// .yellow:nth-child(2n)::before {
+//   background-image: linear-gradient(
+//     30deg,
+//     $main-yellow-rgb-015,
+//     transparent 50%
+//   );
+// }
+
+// @media screen and (min-width: 769px) {
+//   .green::before {
+//     background-image: linear-gradient(
+//       -80deg,
+//       $main-green-rgb-015,
+//       transparent 50%
+//     );
+//   }
+//   .green:nth-child(2n)::before {
+//     background-image: linear-gradient(
+//       80deg,
+//       $main-green-rgb-015,
+//       transparent 50%
+//     );
+//   }
+
+//   .blue::before {
+//     background-image: linear-gradient(
+//       -80deg,
+//       $main-blue-rgb-015,
+//       transparent 50%
+//     );
+//   }
+//   .blue:nth-child(2n)::before {
+//     background-image: linear-gradient(
+//       80deg,
+//       $main-blue-rgb-015,
+//       transparent 50%
+//     );
+//   }
+
+//   .red::before {
+//     background-image: linear-gradient(
+//       -80deg,
+//       $main-red-rgb-015,
+//       transparent 50%
+//     );
+//   }
+//   .red:nth-child(2n)::before {
+//     background-image: linear-gradient(
+//       80deg,
+//       $main-red-rgb-015,
+//       transparent 50%
+//     );
+//   }
+
+//   .yellow::before {
+//     background-image: linear-gradient(
+//       -80deg,
+//       $main-yellow-rgb-015,
+//       transparent 50%
+//     );
+//   }
+//   .yellow:nth-child(2n)::before {
+//     background-image: linear-gradient(
+//       80deg,
+//       $main-yellow-rgb-015,
+//       transparent 50%
+//     );
+//   }
+// }
+// button {
+//   background-color: transparent;
+// }
+
+// PROVAAAAAAAAAAA
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 300px; /* Imposta la larghezza massima della card */
+  margin: 10px;
+}
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-title {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.card-author {
+  font-size: 16px;
+  color: #888888;
+  margin: 5px 0;
+}
+
+.card-year {
+  font-size: 16px;
+  color: #888888;
+  margin: 5px 0;
 }

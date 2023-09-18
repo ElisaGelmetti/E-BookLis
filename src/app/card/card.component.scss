@@ -1,111 +1,444 @@
-// @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
-
-/* Stili di base per il corpo della pagina */
-body {
-  background: #333745;
-  color: #fff;
-  font-family: "Arimo", sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 1px rgba(51, 55, 69, 0.6);
-  margin: 0; /* Rimuove il margine predefinito */
-  padding: 0; /* Rimuove il padding predefinito */
+/* Stile per il container principale */
+.col {
+  margin: 10px;
 }
 
-/* Stili per il layout */
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
-/* Stili per la tabella dei prezzi */
-.pricing-table {
-  position: relative; /* Modifica la posizione iniziale */
-  margin-top: 20px; /* Aggiunge uno spazio sopra la tabella dei prezzi */
-  text-align: center; /* Allinea il testo al centro */
-}
-
-.card {
-  width: 220px;
-  height: 400px; /* Aumenta l'altezza della card */
-  padding: 30px;
-  border-radius: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 2px 2px 46px -4px rgba(0, 0, 0, 0.6);
-  transition: all 0.2s ease-in-out;
-  margin: 12px;
-  background: #f2d7bf; /* Aggiunge un colore di sfondo bianco */
-  color: #333745; /* Cambia il colore del testo */
-  text-align: center; /* Allinea il testo al centro */
-  font-size: 1.25rem;
-}
-
-.card img {
-  max-width: 100%;
-  max-height: 60%; /* Limita l'altezza dell'immagine all'interno della card */
-  object-fit: cover; /* Mantiene le proporzioni e ritaglia l'immagine */
-}
-
-.card h3 {
-  font-size: 1.25rem;
+/* Stile per il titolo del genere */
+.genre-cart h2 {
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
-.card p {
-  font-size: 1rem;
-  color: #666;
+/* Stile per la griglia di carte dei libri su desktop (5 per fila) */
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -10px;
 }
 
-.card-button {
+.card {
+  width: calc(20% - 20px);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  border: none;
+  border-radius: 10px;
+  background-color: #f0b4a4;
+  overflow: hidden;
+}
+
+/* Stile per ogni singola carta del libro su dispositivi mobili (2 per fila) */
+@media (max-width: 767px) {
+  .card-deck {
+    justify-content: flex-start;
+  }
+
+  .card {
+    width: calc(70% - 10px);
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Stile per l'immagine del libro */
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Stile per il corpo della carta del libro */
+.card-body {
+  padding: 15px;
+}
+
+/* Stile per il titolo del libro */
+.card-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Stile per i pulsanti Dettagli e Aggiungi al Carrello */
+.custom-button {
+  background-color: wheat;
+  color: white;
+  padding: 10px 20px;
+  border: none;
   cursor: pointer;
-  position: absolute;
-  width: 90%;
-  bottom: 15px; /* Sposta il pulsante in basso */
-  left: 5%; /* Centra il pulsante orizzontalmente */
-  background-color: #0056b3; /* Cambia il colore di sfondo */
-  border: none; /* Rimuove il bordo */
-  border-radius: 5px; /* Aggiunge un bordo arrotondato */
-  color: #fff;
-  padding: 8px 16px; /* Aggiunge spazio interno al pulsante */
-  font-size: 0.875rem; /* Riduce la dimensione del testo */
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+/* Stile per il bottone quando ci passi sopra */
+.custom-button:hover {
+  background-color: #f0b4a4;
+}
+
+// PRECOMPILATI
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+$main-green: #ef8e76 !default;
+$main-green-rgb-015: #f0b4a4 !default;
+$main-yellow: #ef8e76 !default;
+$main-yellow-rgb-015: #f0b4a4 !default;
+$main-red: #ef8e76 !default;
+$main-red-rgb-015: #f0b4a4 !default;
+$main-blue: #ef8e76 !default;
+$main-blue-rgb-015: #f0b4a4 !default;
+
+/* This pen */
+body {
+  font-family: "Baloo 2", cursive;
+  font-size: 16px;
+  color: #454547;
+  text-rendering: optimizeLegibility;
+  font-weight: initial;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+#pageHeaderTitle {
+  margin: 2rem 0;
   text-transform: uppercase;
   text-align: center;
-  transition: background-color 0.3s ease-in-out;
+  font-size: 2.5rem;
 }
 
-.card-button:hover {
-  background-color: #003f80; /* Cambia il colore di sfondo al passaggio del mouse */
+/* Cards */
+.postcard {
+  flex-wrap: wrap;
+  display: flex;
+
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+  color: #454547;
+
+  &.light {
+    background-color: #f3dbd4;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  h1,
+  .h1 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #454547;
+  }
+
+  .small {
+    font-size: 80%;
+  }
+
+  .postcard__title {
+    font-size: 1.75rem;
+  }
+
+  .postcard__img {
+    max-height: 180px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+
+  .postcard__img_link {
+    display: contents;
+  }
+
+  .postcard__bar {
+    width: 50px;
+    height: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f0b4a4;
+    transition: width 0.2s ease;
+  }
+
+  .postcard__text {
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .postcard__preview-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+    height: 100%;
+  }
+
+  .postcard__tagbox {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 14px;
+    margin: 20px 0 0 0;
+    padding: 0;
+    justify-content: center;
+
+    .tag__item {
+      display: inline-block;
+      background: #dabaaf;
+      border-radius: 3px;
+      padding: 2.5px 10px;
+      margin: 0 5px 5px 0;
+      cursor: default;
+      user-select: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background: red($color: #000000);
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(-70deg, #424242, transparent 50%);
+    opacity: 1;
+    border-radius: 10px;
+  }
+
+  &:hover .postcard__bar {
+    width: 100px;
+  }
 }
 
-/* Keyframes per l'animazione del testo del prezzo */
-@keyframes text-hover {
-  0% {
-    right: -30%;
-  }
-  50% {
-    right: -37%;
-  }
-  100% {
-    right: -30%;
+@media screen and (min-width: 769px) {
+  .postcard {
+    flex-wrap: inherit;
+
+    .postcard__title {
+      font-size: 2rem;
+    }
+
+    .postcard__tagbox {
+      justify-content: start;
+    }
+
+    .postcard__img {
+      max-width: 300px;
+      max-height: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .postcard__text {
+      padding: 3rem;
+      width: 100%;
+    }
+
+    .media.postcard__text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      background: #18151f;
+      top: -20%;
+      height: 130%;
+      width: 55px;
+    }
+
+    &:hover .postcard__img {
+      transform: scale(1.1);
+    }
+
+    &:nth-child(2n + 1) {
+      flex-direction: row;
+    }
+
+    &:nth-child(2n + 0) {
+      flex-direction: row-reverse;
+    }
+
+    &:nth-child(2n + 1) .postcard__text::before {
+      left: -12px !important;
+      transform: rotate(4deg);
+    }
+
+    &:nth-child(2n + 0) .postcard__text::before {
+      right: -12px !important;
+      transform: rotate(-4deg);
+    }
   }
 }
-button {
-  border: none;
-  font-size: 1rem;
-  text-decoration: underline;
-  cursor: pointer;
-  margin-top: -10px; /* Aggiungi spazio tra il titolo e il bottone */
-  background-color: transparent;
+@media screen and (min-width: 1024px) {
+  .postcard__text {
+    padding: 2rem 3.5rem;
+  }
+
+  .postcard__text:before {
+    content: "";
+    position: absolute;
+    display: block;
+
+    top: -20%;
+    height: 130%;
+    width: 55px;
+  }
+}
+
+/* COLORS */
+.postcard .postcard__tagbox .green.play:hover {
+  background: $main-green;
   color: black;
 }
-button:hover {
-  text-decoration: none; /* Rimuovi la sottolineatura quando il bottone è in hover */
+.green .postcard__title:hover {
+  color: $main-green;
+}
+.green .postcard__bar {
+  background-color: $main-green;
+}
+.green::before {
+  background-image: linear-gradient(
+    -30deg,
+    $main-green-rgb-015,
+    transparent 50%
+  );
+}
+.green:nth-child(2n)::before {
+  background-image: linear-gradient(
+    30deg,
+    $main-green-rgb-015,
+    transparent 50%
+  );
 }
 
-p {
-  display: none; /* Nascondi il testo del paragrafo */
+.postcard .postcard__tagbox .blue.play:hover {
+  background: $main-blue;
+}
+.blue .postcard__title:hover {
+  color: $main-blue;
+}
+.blue .postcard__bar {
+  background-color: $main-blue;
+}
+.blue::before {
+  background-image: linear-gradient(
+    -30deg,
+    $main-blue-rgb-015,
+    transparent 50%
+  );
+}
+.blue:nth-child(2n)::before {
+  background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
+}
+
+.postcard .postcard__tagbox .red.play:hover {
+  background: $main-red;
+}
+.red .postcard__title:hover {
+  color: $main-red;
+}
+.red .postcard__bar {
+  background-color: $main-red;
+}
+.red::before {
+  background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
+}
+.red:nth-child(2n)::before {
+  background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
+}
+
+.postcard .postcard__tagbox .yellow.play:hover {
+  background: $main-yellow;
+  color: black;
+}
+.yellow .postcard__title:hover {
+  color: $main-yellow;
+}
+.yellow .postcard__bar {
+  background-color: $main-yellow;
+}
+.yellow::before {
+  background-image: linear-gradient(
+    -30deg,
+    $main-yellow-rgb-015,
+    transparent 50%
+  );
+}
+.yellow:nth-child(2n)::before {
+  background-image: linear-gradient(
+    30deg,
+    $main-yellow-rgb-015,
+    transparent 50%
+  );
+}
+
+@media screen and (min-width: 769px) {
+  .green::before {
+    background-image: linear-gradient(
+      -80deg,
+      $main-green-rgb-015,
+      transparent 50%
+    );
+  }
+  .green:nth-child(2n)::before {
+    background-image: linear-gradient(
+      80deg,
+      $main-green-rgb-015,
+      transparent 50%
+    );
+  }
+
+  .blue::before {
+    background-image: linear-gradient(
+      -80deg,
+      $main-blue-rgb-015,
+      transparent 50%
+    );
+  }
+  .blue:nth-child(2n)::before {
+    background-image: linear-gradient(
+      80deg,
+      $main-blue-rgb-015,
+      transparent 50%
+    );
+  }
+
+  .red::before {
+    background-image: linear-gradient(
+      -80deg,
+      $main-red-rgb-015,
+      transparent 50%
+    );
+  }
+  .red:nth-child(2n)::before {
+    background-image: linear-gradient(
+      80deg,
+      $main-red-rgb-015,
+      transparent 50%
+    );
+  }
+
+  .yellow::before {
+    background-image: linear-gradient(
+      -80deg,
+      $main-yellow-rgb-015,
+      transparent 50%
+    );
+  }
+  .yellow:nth-child(2n)::before {
+    background-image: linear-gradient(
+      80deg,
+      $main-yellow-rgb-015,
+      transparent 50%
+    );
+  }
 }

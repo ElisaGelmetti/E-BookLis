@@ -1,1 +1,102 @@
-<h2>Carello</h2>
+<!-- <nav class="mainNav">
+  <div class="mainNav__logo">E-BookList</div>
+  <div class="mainNav__links">
+    <ul class="mainNav__links">
+      <li>
+        <a class="mainNav__link" routerLink="/home">Home</a>
+      </li>
+      <li><a class="mainNav__link" routerLink="/card">Card</a></li>
+      <li><a class="mainNav__link" routerLink="/search">Ricerca</a></li>
+      <li><a class="mainNav__link" routerLink="/carrello">Carrello</a></li>
+
+      <li><a class="mainNav__link" routerLink="/login">Login</a></li>
+    </ul>
+  </div>
+
+  <div class="mainNav__icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <g data-name="Layer 2" fill="#9197AE">
+        <g data-name="menu-2">
+          <rect
+            width="24"
+            height="24"
+            transform="rotate(180 12 12)"
+            opacity="0"
+          />
+          <circle cx="4" cy="12" r="1" />
+          <rect x="7" y="11" width="14" height="2" rx=".94" ry=".94" />
+          <rect x="3" y="16" width="18" height="2" rx=".94" ry=".94" />
+          <rect x="3" y="6" width="18" height="2" rx=".94" ry=".94" />
+        </g>
+      </g>
+    </svg>
+  </div>
+</nav> -->
+
+<h1>
+  {{ books[0].volumeInfo.title }}
+</h1>
+<img
+  [src]="book[0].volumeInfo.imageLinks?.thumbnail"
+  alt="Copertina del libro"
+/>
+<h2>
+  {{ books[0].volumeInfo.description }}
+</h2>
+
+<!-- <div class="card-container">
+  <img
+    [src]="book[0].volumeInfo.imageLinks?.thumbnail"
+    alt="Copertina del libro"
+    class="card-image"
+  />
+  <h1 class="card-title">TITOLO:{{ books[0].volumeInfo.title }}</h1>
+
+  <h2 class="card-year">{{ books[0].volumeInfo.publishedDate }}</h2>
+</div> -->
+
+<!-- PROVA -->
+<!--
+<div *ngFor="let book of cartResults">
+  <section class="light">
+    <div class="container py-2">
+      <div class="h1 text-center text-dark" id="pageHeaderTitle"></div>
+
+      <article class="postcard light blue">
+        <a class="postcard__img_link" href="#">
+          <img
+            [src]="book.volumeInfo?.imageLinks?.thumbnail"
+            alt="Copertina del libro"
+          />
+        </a>
+        <div class="postcard__text t-dark">
+          <h1 class="postcard__title blue">
+            <a href="#"> {{ book.volumeInfo?.title }}</a>
+          </h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 ">
+              <i class="fas fa-calendar-alt mr-2"></i
+              >{{ book.volumeInfo?.authors?.join(", ") || "Sconosciuto" }}
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">
+            {{ book.volumeInfo?.description }}
+          </div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item">
+              <i class="fas fa-tag mr-2"></i>{{ book.volumeInfo?.categories }}
+            </li>
+            <li class="tag__item">
+              <i class="fas fa-clock mr-2"></i
+              >{{ book.volumeInfo?.publishedDate }}
+            </li>
+            <li class="tag__item play blue">
+              <button (click)="clearCard()">Elimina</button>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+</div> -->

@@ -29,6 +29,7 @@ export class SearchComponent {
   }
   addToCart(book: any) {
     this.cart.push(book);
+    localStorage.setItem('usercarrello', JSON.stringify(book));
     console.log('Aggiunto al Carrello:', book.volumeInfo.title);
   }
 }

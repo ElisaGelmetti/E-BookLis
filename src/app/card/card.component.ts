@@ -105,6 +105,7 @@ export class CardComponent implements OnInit {
   selectedBook: any;
   showDetailsAlert: boolean = false;
   descriptionsMissing: boolean = false;
+  carrelloService: any;
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
@@ -141,6 +142,11 @@ export class CardComponent implements OnInit {
   }
   addToCart(book: any) {
     this.cartItems.push(book);
+    localStorage.setItem('userCarello', JSON.stringify(this.cartItems));
     console.log('Aggiunto al carrello:', book);
+    this.router.navigate(['carrello'], { state: { book } });
+  }
+  clearCart() {
+    this.carrelloService.clearCarrello(); // Chiama la funzione per svuotare il carrello nel servizio
   }
 }

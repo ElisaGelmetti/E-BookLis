@@ -7,20 +7,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+// import { LoginComponent } from './login/login.component';
 import { CardComponent } from './card/card.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CarrelloComponent } from './carrello/carrello.component';
 import { CartService } from './cart.service';
 import { RouterModule } from '@angular/router';
 import { SearchComponent } from './search/search.component';
-import { Component, ViewChild } from '@angular/core';
-import {
-  NgbCarousel,
-  NgbCarouselModule,
-  NgbSlideEvent,
-  NgbSlideEventSource,
-} from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
@@ -36,7 +29,7 @@ import { AvventuraComponent } from './generi/avventura/avventura.component';
     HomeComponent,
     CartComponent,
     SearchComponent,
-    LoginComponent,
+    // LoginComponent,
     CardComponent,
 
     CarrelloComponent,

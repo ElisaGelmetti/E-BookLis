@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  NgModel,
   FormControl,
   FormGroup,
   FormsModule,
