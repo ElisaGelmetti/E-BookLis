@@ -242,376 +242,160 @@ body {
   }
 }
 
-// PRECOMPILATI
+// #ffd7c9 #ef8e76
 
-// @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
-// $main-green: #ef8e76 !default;
-// $main-green-rgb-015: #f0b4a4 !default;
-// $main-yellow: #ef8e76 !default;
-// $main-yellow-rgb-015: #f0b4a4 !default;
-// $main-red: #ef8e76 !default;
-// $main-red-rgb-015: #f0b4a4 !default;
-// $main-blue: #ef8e76 !default;
-// $main-blue-rgb-015: #f0b4a4 !default;
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbdcd1; /* Sfondo rosa chiaro */
+  border-radius: 10px; /* Bordo arrotondato */
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 8px; /* Abbassa la barra del 30% */
+}
 
-// /* This pen */
-// .body {
-//   font-family: "Baloo 2", cursive;
-//   font-size: 16px;
-//   color: #454547;
-//   text-rendering: optimizeLegibility;
-//   font-weight: initial;
+/* Stile per l'input di ricerca */
+.search-container input {
+  border: 1px solid#ef8e76; /* Bordo viola */
+  border-radius: 10px; /* Bordo arrotondato */
+  padding: 10px;
+  margin-right: 10px;
+  width: 70%; /* Larghezza percentuale per adattarsi al contenuto */
+}
+
+/* Stile per il pulsante di ricerca */
+.search-container button {
+  background-color: #ef8e76;
+  border: 1px solid#ef8e76;
+  border-radius: 10px; /* Bordo arrotondato */
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Stile per il container dei risultati */
+.results-container {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+// STILE CARD
+
+/* Stile per la singola carta del libro */
+// .book {
+//   display: flex; /* Utilizza il layout flessibile */
+//   background-color: #fff; /* Sfondo bianco */
+//   border: 1px solid #ccc; /* Bordo grigio */
+//   border-radius: 10px; /* Bordo arrotondato */
+//   padding: 20px;
+//   margin: 10px;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//   transition: transform 0.2s;
+//   flex-direction: row; /* Imposta la direzione dei figli in riga */
+//   justify-content: space-between; /* Spazio tra gli elementi */
+//   align-items: center; /* Allinea il contenuto al centro verticalmente */
+//   text-align: center; /* Allinea il testo al centro */
+// }
+// /* Stile per l'immagine del libro */
+// .book img {
+//   max-width: 100px; /* Larghezza massima dell'immagine */
+//   height: auto;
+//   margin-bottom: 10px; /* Margine inferiore per separare l'immagine dal testo */
 // }
 
-// a,
-// a:hover {
-//   text-decoration: none;
-//   transition: color 0.3s ease-in-out;
-// }
-
-// #pageHeaderTitle {
-//   margin: 2rem 0;
-//   text-transform: uppercase;
-//   text-align: center;
-//   font-size: 2.5rem;
-// }
-
-// /* Cards */
-// .postcard {
-//   flex-wrap: wrap;
+// /* Stile per le etichette (Titolo, Autore, Anno) */
+// .book-label {
+//   font-weight: bold; /* Testo in grassetto */
 //   display: flex;
+//   flex-direction: column;
+//   margin-bottom: 13px;
+// }
 
-//   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
-//   border-radius: 10px;
-//   margin: 0 0 2rem 0;
-//   overflow: hidden;
-//   position: relative;
-//   color: #454547;
+// /* Stile per il titolo, l'autore e l'anno */
+// .book-info {
+//   font-size: 16px;
+//   margin: 5px 0; /* Margine superiore e inferiore per separare il testo */
+// }
 
-//   &.light {
-//     background-color: #f3dbd4;
-//   }
+// /* Stile per il pulsante di aggiunta al carrello */
+// .book button {
+//   background-color: #ef8e76; /* Sfondo viola */
+//   border: none;
+//   border-radius: 10px; /* Bordo arrotondato */
+//   color: #fff; /* Colore del testo bianco */
+//   padding: 5px 10px;
+//   cursor: pointer;
+// }
 
-//   a {
-//     color: inherit;
-//   }
+// .book button:hover {
+//   background-color: #ef8e76; /* Cambia colore al passaggio del mouse */
+// }
 
-//   h1,
-//   .h1 {
-//     margin-bottom: 0.5rem;
-//     font-weight: 500;
-//     line-height: 1.2;
-//     color: #454547;
-//   }
-
-//   .small {
-//     font-size: 80%;
-//   }
-
-//   .postcard__title {
-//     font-size: 1.75rem;
-//   }
-
-//   .postcard__img {
-//     max-height: 180px;
-//     width: 100%;
-//     object-fit: cover;
-//     position: relative;
-//   }
-
-//   .postcard__img_link {
-//     display: contents;
-//   }
-
-//   .postcard__bar {
-//     width: 50px;
-//     height: 10px;
-//     margin: 10px 0;
-//     border-radius: 5px;
-//     background-color: #f0b4a4;
-//     transition: width 0.2s ease;
-//   }
-
-//   .postcard__text {
-//     padding: 1.5rem;
-//     position: relative;
-//     display: flex;
-//     flex-direction: column;
-//   }
-
-//   .postcard__preview-txt {
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//     text-align: justify;
-//     height: 100%;
-//   }
-
-//   .postcard__tagbox {
-//     display: flex;
-//     flex-flow: row wrap;
-//     font-size: 14px;
-//     margin: 20px 0 0 0;
-//     padding: 0;
-//     justify-content: center;
-
-//     .tag__item {
-//       display: inline-block;
-//       background: #dabaaf;
-//       border-radius: 3px;
-//       padding: 2.5px 10px;
-//       margin: 0 5px 5px 0;
-//       cursor: default;
-//       user-select: none;
-//       transition: background-color 0.3s;
-
-//       &:hover {
-//         background: red($color: #000000);
-//       }
-//     }
-//   }
-
-//   &:before {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//     background-image: linear-gradient(-70deg, #424242, transparent 50%);
-//     opacity: 1;
-//     border-radius: 10px;
-//   }
-
-//   &:hover .postcard__bar {
-//     width: 100px;
+// /* Stile per rendere le carte responsive */
+// @media screen and (max-width: 768px) {
+//   .book {
+//     flex-basis: calc(
+//       50% - 20px
+//     ); /* Ingrandisci le carte per dispositivi più piccoli */
 //   }
 // }
 
-// @media screen and (min-width: 769px) {
-//   .postcard {
-//     flex-wrap: inherit;
-
-//     .postcard__title {
-//       font-size: 2rem;
-//     }
-
-//     .postcard__tagbox {
-//       justify-content: start;
-//     }
-
-//     .postcard__img {
-//       max-width: 300px;
-//       max-height: 100%;
-//       transition: transform 0.3s ease;
-//     }
-
-//     .postcard__text {
-//       padding: 3rem;
-//       width: 100%;
-//     }
-
-//     .media.postcard__text:before {
-//       content: "";
-//       position: absolute;
-//       display: block;
-//       background: #18151f;
-//       top: -20%;
-//       height: 130%;
-//       width: 55px;
-//     }
-
-//     &:hover .postcard__img {
-//       transform: scale(1.1);
-//     }
-
-//     &:nth-child(2n + 1) {
-//       flex-direction: row;
-//     }
-
-//     &:nth-child(2n + 0) {
-//       flex-direction: row-reverse;
-//     }
-
-//     &:nth-child(2n + 1) .postcard__text::before {
-//       left: -12px !important;
-//       transform: rotate(4deg);
-//     }
-
-//     &:nth-child(2n + 0) .postcard__text::before {
-//       right: -12px !important;
-//       transform: rotate(-4deg);
-//     }
-//   }
-// }
-// @media screen and (min-width: 1024px) {
-//   .postcard__text {
-//     padding: 2rem 3.5rem;
-//   }
-
-//   .postcard__text:before {
-//     content: "";
-//     position: absolute;
-//     display: block;
-
-//     top: -20%;
-//     height: 130%;
-//     width: 55px;
-//   }
+// ABBASTANZA BENE
+// .results-container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
 // }
 
-// /* COLORS */
-// .postcard .postcard__tagbox .green.play:hover {
-//   background: $main-green;
-//   color: black;
-// }
-// .green .postcard__title:hover {
-//   color: $main-green;
-// }
-// .green .postcard__bar {
-//   background-color: $main-green;
-// }
-// .green::before {
-//   background-image: linear-gradient(
-//     -30deg,
-//     $main-green-rgb-015,
-//     transparent 50%
-//   );
-// }
-// .green:nth-child(2n)::before {
-//   background-image: linear-gradient(
-//     30deg,
-//     $main-green-rgb-015,
-//     transparent 50%
-//   );
+// .book {
+//   width: 100%;
+//   max-width: 300px;
+//   margin: 0 10px 20px;
+//   padding: 15px;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//   background-color: #fff;
 // }
 
-// .postcard .postcard__tagbox .blue.play:hover {
-//   background: $main-blue;
-// }
-// .blue .postcard__title:hover {
-//   color: $main-blue;
-// }
-// .blue .postcard__bar {
-//   background-color: $main-blue;
-// }
-// .blue::before {
-//   background-image: linear-gradient(
-//     -30deg,
-//     $main-blue-rgb-015,
-//     transparent 50%
-//   );
-// }
-// .blue:nth-child(2n)::before {
-//   background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
+// .book img {
+//   max-width: 100%;
+//   height: auto;
 // }
 
-// .postcard .postcard__tagbox .red.play:hover {
-//   background: $main-red;
-// }
-// .red .postcard__title:hover {
-//   color: $main-red;
-// }
-// .red .postcard__bar {
-//   background-color: $main-red;
-// }
-// .red::before {
-//   background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
-// }
-// .red:nth-child(2n)::before {
-//   background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
+// .book p {
+//   margin: 5px 0;
 // }
 
-// .postcard .postcard__tagbox .yellow.play:hover {
-//   background: $main-yellow;
-//   color: black;
-// }
-// .yellow .postcard__title:hover {
-//   color: $main-yellow;
-// }
-// .yellow .postcard__bar {
-//   background-color: $main-yellow;
-// }
-// .yellow::before {
-//   background-image: linear-gradient(
-//     -30deg,
-//     $main-yellow-rgb-015,
-//     transparent 50%
-//   );
-// }
-// .yellow:nth-child(2n)::before {
-//   background-image: linear-gradient(
-//     30deg,
-//     $main-yellow-rgb-015,
-//     transparent 50%
-//   );
+// .book-label {
+//   font-weight: bold;
 // }
 
-// @media screen and (min-width: 769px) {
-//   .green::before {
-//     background-image: linear-gradient(
-//       -80deg,
-//       $main-green-rgb-015,
-//       transparent 50%
-//     );
-//   }
-//   .green:nth-child(2n)::before {
-//     background-image: linear-gradient(
-//       80deg,
-//       $main-green-rgb-015,
-//       transparent 50%
-//     );
-//   }
-
-//   .blue::before {
-//     background-image: linear-gradient(
-//       -80deg,
-//       $main-blue-rgb-015,
-//       transparent 50%
-//     );
-//   }
-//   .blue:nth-child(2n)::before {
-//     background-image: linear-gradient(
-//       80deg,
-//       $main-blue-rgb-015,
-//       transparent 50%
-//     );
-//   }
-
-//   .red::before {
-//     background-image: linear-gradient(
-//       -80deg,
-//       $main-red-rgb-015,
-//       transparent 50%
-//     );
-//   }
-//   .red:nth-child(2n)::before {
-//     background-image: linear-gradient(
-//       80deg,
-//       $main-red-rgb-015,
-//       transparent 50%
-//     );
-//   }
-
-//   .yellow::before {
-//     background-image: linear-gradient(
-//       -80deg,
-//       $main-yellow-rgb-015,
-//       transparent 50%
-//     );
-//   }
-//   .yellow:nth-child(2n)::before {
-//     background-image: linear-gradient(
-//       80deg,
-//       $main-yellow-rgb-015,
-//       transparent 50%
-//     );
-//   }
+// .book-info {
+//   font-weight: normal;
 // }
+
+// .book-description {
+//   font-style: italic;
+// }
+
 // button {
-//   background-color: transparent;
+//   background-color: #ef8e76;
+//   color: #fff;
+//   border: none;
+//   padding: 10px 20px;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+//   margin-top: 10px;
 // }
 
-// PROVAAAAAAAAAAA
+// button:hover {
+//   background-color: #f0b4a4;
+// }
+
+// PRECOMPILATI
 
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 $main-green: #ef8e76 !default;
@@ -649,7 +433,7 @@ a:hover {
 .postcard {
   flex-wrap: wrap;
   display: flex;
-  width: 50%;
+
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
   border-radius: 10px;
   margin: 0 0 2rem 0;

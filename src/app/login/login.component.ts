@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
   };
   loginObj: any = {
     userName: 'Elisa',
-    password: 'Ciao',
+    password: 'elisa',
   };
 
   constructor(private router: Router) {} // Inietta il servizio Router

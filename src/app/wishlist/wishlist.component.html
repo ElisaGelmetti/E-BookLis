@@ -34,27 +34,9 @@
   </div>
 </nav>
 
-<!-- <h1>
-  {{ books[0].volumeInfo.title }}
-</h1>
-<img
-  [src]="book[0].volumeInfo.imageLinks?.thumbnail"
-  alt="Copertina del libro"
-/>
-<h2>
-  {{ books[0].volumeInfo.description }}
-</h2> -->
-<!-- <div *ngFor="let book of books" class="cart-item">
-  <h1>{{ book.volumeInfo.title }}</h1>
-  <img
-    [src]="book.volumeInfo.imageLinks?.thumbnail"
-    alt="Copertina del libro"
-  />
-  <h2>{{ book.volumeInfo.description }}</h2>
-  <button (click)="removeFromCart(book)">Togli dal carrello</button>
-</div> -->
-<h1>il tuo carello</h1>
-<div *ngFor="let book of books" class="cart-item">
+<h1>La tua lista desideri</h1>
+
+<div *ngFor="let book of books; trackBy: trackByFn">
   <section class="light">
     <div class="container py-2">
       <div class="h1 text-center text-dark" id="pageHeaderTitle"></div>
@@ -77,9 +59,9 @@
             </time>
           </div>
           <div class="postcard__bar"></div>
-          <!-- <div class="postcard__preview-txt">
+          <div class="postcard__preview-txt">
             {{ book.volumeInfo.description }}
-          </div> -->
+          </div>
           <ul class="postcard__tagbox">
             <li class="tag__item">
               <i class="fas fa-tag mr-2"></i>{{ book.volumeInfo.categories }}
@@ -89,7 +71,12 @@
               >{{ book.volumeInfo.publishedDate }}
             </li>
             <li class="tag__item play blue">
-              <button (click)="removeFromCart(book)">Togli dal carrello</button>
+              <button
+                class="btn btn-outline-danger"
+                (click)="removeFromWishlist(book)"
+              >
+                <i class="fas fa-heart"></i> Rimuovi dalla Wishlist
+              </button>
             </li>
           </ul>
         </div>

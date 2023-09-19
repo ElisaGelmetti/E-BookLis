@@ -15,6 +15,7 @@ export class SearchComponent {
   showDescription = false; // Aggiungi questa linea per dichiarare showDescription
   books: any = [];
   cartItems: any[] = []; // Inizializza un array per i libri nel carrello
+  wishlistItems: any[] = []; //Aggiungi alla wishlist
   constructor(private http: HttpClient, private apiService: ApiService) {}
 
   searchBooks() {
@@ -31,5 +32,11 @@ export class SearchComponent {
     this.cartItems.push(book);
     localStorage.setItem('usercarrello', JSON.stringify(book));
     console.log('Aggiunto al Carrello:', book.volumeInfo.title);
+  }
+
+  addToWishlist(book: any) {
+    this.wishlistItems.push(book);
+    localStorage.setItem('wishlist', JSON.stringify(book));
+    console.log('Aggiunto alla wishlist:', book.volumeInfo.title);
   }
 }

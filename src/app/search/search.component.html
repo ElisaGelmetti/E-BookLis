@@ -5,7 +5,8 @@
       <li>
         <a class="mainNav__link" routerLink="/home">Home</a>
       </li>
-      <li><a class="mainNav__link" routerLink="/card">Card</a></li>
+      <!-- <li><a class="mainNav__link" routerLink="/card">Card</a></li> -->
+      <li><a class="mainNav__link" routerLink="/wishlist">Wish List</a></li>
       <li><a class="mainNav__link" routerLink="/search">Ricerca</a></li>
       <li><a class="mainNav__link" routerLink="/carrello">Carrello</a></li>
 
@@ -116,6 +117,15 @@
             </li>
             <li class="tag__item play blue">
               <button (click)="addToCart(book)">Aggiungi al Carrello</button>
+            </li>
+
+            <li class="tag__item play blue">
+              <button
+                (click)="addToWishlist(book)"
+                class="btn btn-outline-danger"
+              >
+                <i class="fas fa-heart"></i> Aggiungi alla Wishlist
+              </button>
             </li>
           </ul>
         </div>

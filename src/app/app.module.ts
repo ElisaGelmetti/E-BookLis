@@ -24,6 +24,7 @@ import { FantasyComponent } from './generi/fantasy/fantasy.component';
 import { AvventuraComponent } from './generi/avventura/avventura.component';
 import { LoginComponent } from './login/login.component';
 import { AuthorInfoComponent } from './author-info/author-info.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AuthorInfoComponent } from './author-info/author-info.component';
     AvventuraComponent,
     LoginComponent,
     AuthorInfoComponent,
+    WishlistComponent,
   ],
   imports: [
     BrowserModule,
