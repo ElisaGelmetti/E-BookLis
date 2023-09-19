@@ -7,14 +7,21 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
+  cartItems: { book: any; quantity: number }[] = []; // Inizializza il carrello come un array vuoto con quantità
   showDescription(book: any) {
     alert(book.description || 'Descrizione non disponibile.');
   }
 
   addToCart(book: any) {
-    // Implementa il codice per aggiungere il libro al carrello
-    // Puoi utilizzare un array per tenere traccia dei libri nel carrello
-    // Ad esempio, this.cartItems.push(book);
+    const existingItem = this.cartItems.find(
+      (item) => item.book.id === book.id
+    );
+
+    if (existingItem) {
+      existingItem.quantity++; // Incrementa la quantità se il libro è già nel carrello
+    } else {
+      this.cartItems.push({ book, quantity: 6 }); // Aggiungi il libro al carrello con quantità 1
+    }
   }
   horrorBooks: any[] = [];
   fantasyBooks: any[] = [];
@@ -47,6 +54,5 @@ export class CartComponent implements OnInit {
           this.horrorBooks = data.items.map((item: any) => item.volumeInfo);
         }
       });
-    // Puoi fare lo stesso per i generi fantasy e avventura
   }
 }

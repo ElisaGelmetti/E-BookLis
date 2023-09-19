@@ -3,129 +3,96 @@
     <input type="checkbox" id="chk" aria-hidden="true" />
 
     <div class="signup">
-      <form [formGroup]="homeform" (ngSubmit)="onSubmit()">
-        <div>
-          <label for="chk" aria-hidden="true">Sign up</label>
-          <input
-            type="text"
-            placeholder="User name"
-            name="txt"
-            [(ngModel)]="formData.username"
-            required
-          />
-          <p
-            *nhIf="!homeform.get('nome').valid && homeform.get('nome'); touched"
-          >
-            Iserisci nome
-          </p>
-        </div>
-
-        <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            [(ngModel)]="formData.email"
-            required
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            name="pswd"
-            placeholder="Password"
-            [(ngModel)]="formData.password"
-            required
-          />
-        </div>
-
-        <button type="submit">Sign up</button>
-      </form>
-    </div>
-
-    <div class="login">
-      <form #homeform="ngForm" (ngSubmit)="onSubmit(homeform)">
-        <label class="testo" for="chk" aria-hidden="true">Login</label>
+      <form>
+        <label for="chk" aria-hidden="true">Sign up</label>
+        <input
+          type="text"
+          name="txt"
+          placeholder="User name"
+          [(ngModel)]="signupObj.usarName"
+        />
         <input
           type="email"
           name="email"
           placeholder="Email"
-          [(ngModel)]="formData.email"
-          required=""
-          ngModel
+          [(ngModel)]="signupObj.email"
         />
         <input
           type="password"
           name="pswd"
           placeholder="Password"
-          [(ngModel)]="formData.password"
-          required=""
-          ngModel
+          [(ngModel)]="signupObj.password"
         />
-        <button type="submit" [disabled]="homeform.valid">Login</button>
+        <button (click)="onSignUp()">Sign up</button>
+      </form>
+    </div>
+
+    <div class="login">
+      <form>
+        <label for="chk" aria-hidden="true">Login</label>
+        <input
+          type="text"
+          name="UserName"
+          placeholder="UserName"
+          [(ngModel)]="loginObj.userName"
+        />
+        <input
+          type="password"
+          name="pswd"
+          placeholder="Password"
+          [(ngModel)]="loginObj.password"
+        />
+        <button routerLink="/" (click)="onLogin()">Login</button>
+      </form>
+    </div>
+  </div>
+</body> -->
+<body>
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true" />
+
+    <div class="signup" *ngIf="!isLoggedIn">
+      <form>
+        <label for="chk" aria-hidden="true">Sign up</label>
+        <input
+          type="text"
+          name="txt"
+          placeholder="User name"
+          [(ngModel)]="signupObj.username"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          [(ngModel)]="signupObj.email"
+        />
+        <input
+          type="password"
+          name="pswd"
+          placeholder="Password"
+          [(ngModel)]="signupObj.password"
+        />
+        <button (click)="onSignUp()">Sign up</button>
+      </form>
+    </div>
+
+    <div class="login">
+      <form>
+        <label for="chk" aria-hidden="true">Login</label>
+        <input
+          type="text"
+          name="userName"
+          placeholder="UserName"
+          [(ngModel)]="loginObj.userName"
+        />
+        <input
+          type="password"
+          name="pswd"
+          placeholder="Password"
+          [(ngModel)]="loginObj.password"
+        />
+        <button (click)="onLogin()">Login</button>
       </form>
     </div>
   </div>
 </body>
-
-<a routerLink="/" class="mainNav__link">Home</a>  -->
-
-<html>
-  <head>
-    <title>Slide Navbar</title>
-    <link rel="stylesheet" type="text/css" href="slide navbar style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="main">
-      <input type="checkbox" id="chk" aria-hidden="true" />
-
-      <div class="signup">
-        <form>
-          <label for="chk" aria-hidden="true">Sign up</label>
-          <input
-            type="text"
-            name="txt"
-            placeholder="User name"
-            [(ngModel)]="signupObj.usarName"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            [(ngModel)]="signupObj.email"
-          />
-          <input
-            type="password"
-            name="pswd"
-            placeholder="Password"
-            [(ngModel)]="signupObj.password"
-          />
-          <button (click)="onSignUp()">Sign up</button>
-        </form>
-      </div>
-
-      <div class="login">
-        <form>
-          <label for="chk" aria-hidden="true">Login</label>
-          <input
-            type="text"
-            name="UserName"
-            placeholder="UserName"
-            [(ngModel)]="loginObj.userName"
-          />
-          <input
-            type="password"
-            name="pswd"
-            placeholder="Password"
-            [(ngModel)]="loginObj.password"
-          />
-          <button (click)="onLogin()">Login</button>
-        </form>
-      </div>
-    </div>
-  </body>
-</html>

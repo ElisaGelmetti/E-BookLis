@@ -3,27 +3,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 
-// import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
 import { CarrelloComponent } from './carrello/carrello.component';
 import { CardComponent } from './card/card.component';
 import { AuthGuard } from './auth/auth.guard';
-// import { SigninComponent } from './signin/signin.component';
-// import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { AuthorInfoComponent } from './author-info/author-info.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'cart', component: CartComponent },
-  // { path: 'signin', component: SigninComponent },
-  // { path: 'signup', component: SignupComponent },
-  // { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
+
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'card', component: CardComponent },
   { path: 'carrello', component: CarrelloComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'author/:authorId', component: AuthorInfoComponent }, // Rotta per le informazioni sull'autore
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
   bootstrap: [AppComponent],
 })

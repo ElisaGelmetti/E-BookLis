@@ -1,4 +1,4 @@
-<!-- <nav class="mainNav">
+<nav class="mainNav">
   <div class="mainNav__logo">E-BookList</div>
   <div class="mainNav__links">
     <ul class="mainNav__links">
@@ -31,9 +31,9 @@
       </g>
     </svg>
   </div>
-</nav> -->
+</nav>
 
-<h1>
+<!-- <h1>
   {{ books[0].volumeInfo.title }}
 </h1>
 <img
@@ -42,22 +42,17 @@
 />
 <h2>
   {{ books[0].volumeInfo.description }}
-</h2>
-
-<!-- <div class="card-container">
+</h2> -->
+<!-- <div *ngFor="let book of books" class="cart-item">
+  <h1>{{ book.volumeInfo.title }}</h1>
   <img
-    [src]="book[0].volumeInfo.imageLinks?.thumbnail"
+    [src]="book.volumeInfo.imageLinks?.thumbnail"
     alt="Copertina del libro"
-    class="card-image"
   />
-  <h1 class="card-title">TITOLO:{{ books[0].volumeInfo.title }}</h1>
-
-  <h2 class="card-year">{{ books[0].volumeInfo.publishedDate }}</h2>
+  <h2>{{ book.volumeInfo.description }}</h2>
+  <button (click)="removeFromCart(book)">Togli dal carrello</button>
 </div> -->
-
-<!-- PROVA -->
-<!--
-<div *ngFor="let book of cartResults">
+<div *ngFor="let book of books" class="cart-item">
   <section class="light">
     <div class="container py-2">
       <div class="h1 text-center text-dark" id="pageHeaderTitle"></div>
@@ -65,38 +60,38 @@
       <article class="postcard light blue">
         <a class="postcard__img_link" href="#">
           <img
-            [src]="book.volumeInfo?.imageLinks?.thumbnail"
+            [src]="book.volumeInfo.imageLinks?.thumbnail"
             alt="Copertina del libro"
           />
         </a>
         <div class="postcard__text t-dark">
           <h1 class="postcard__title blue">
-            <a href="#"> {{ book.volumeInfo?.title }}</a>
+            <a href="#">{{ book.volumeInfo.title }}</a>
           </h1>
           <div class="postcard__subtitle small">
             <time datetime="2020-05-25 ">
               <i class="fas fa-calendar-alt mr-2"></i
-              >{{ book.volumeInfo?.authors?.join(", ") || "Sconosciuto" }}
+              >{{ book.volumeInfo.authors?.join(", ") || "Sconosciuto" }}
             </time>
           </div>
           <div class="postcard__bar"></div>
           <div class="postcard__preview-txt">
-            {{ book.volumeInfo?.description }}
+            {{ book.volumeInfo.description }}
           </div>
           <ul class="postcard__tagbox">
             <li class="tag__item">
-              <i class="fas fa-tag mr-2"></i>{{ book.volumeInfo?.categories }}
+              <i class="fas fa-tag mr-2"></i>{{ book.volumeInfo.categories }}
             </li>
             <li class="tag__item">
               <i class="fas fa-clock mr-2"></i
-              >{{ book.volumeInfo?.publishedDate }}
+              >{{ book.volumeInfo.publishedDate }}
             </li>
             <li class="tag__item play blue">
-              <button (click)="clearCard()">Elimina</button>
+              <button (click)="removeFromCart(book)">Togli dal carrello</button>
             </li>
           </ul>
         </div>
       </article>
     </div>
   </section>
-</div> -->
+</div>

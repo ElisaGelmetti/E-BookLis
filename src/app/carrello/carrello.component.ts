@@ -84,7 +84,13 @@ export class CarrelloComponent {
   getCarrelloItems() {
     return this.carrelloItems;
   }
-  clearCard() {
-    this.carrelloItems = [];
+  removeFromCart(book: any) {
+    // Trova l'indice del libro nel carrello
+    const index = this.books.indexOf(book);
+
+    // Rimuovi il libro dal carrello
+    if (index !== -1) {
+      this.books.splice(index, 1);
+    }
   }
 }
