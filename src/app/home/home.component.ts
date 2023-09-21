@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private http: HttpClient, config: NgbCarouselConfig) {
     // Personalizza le opzioni del carosello se necessario
-    config.interval = 9000; // Tempo in millisecondi tra le diapositive (imposta a tuo piacimento)
+    config.interval = 8000; // Tempo in millisecondi tra le diapositive (imposta a tuo piacimento)
     config.wrap = true; // Il carosello torna alla prima diapositiva dopo l'ultima
   }
 

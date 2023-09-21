@@ -21,6 +21,4 @@ export class ApiService {
   getBookDetails(bookId: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/${bookId}`);
   }
-
-  // Aggiungi altri metodi per gestire altre chiamate API, se necessario
 }

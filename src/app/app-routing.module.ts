@@ -6,7 +6,7 @@ import { CartComponent } from './cart/cart.component';
 import { AppComponent } from './app.component';
 import { CarrelloComponent } from './carrello/carrello.component';
 import { CardComponent } from './card/card.component';
-import { AuthGuard } from './auth/auth.guard';
+
 import { LoginComponent } from './login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 

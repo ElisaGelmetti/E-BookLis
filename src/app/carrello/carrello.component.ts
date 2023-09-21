@@ -74,9 +74,23 @@ export class CarrelloComponent {
   // ...
 
   addToCart(book: any) {
+    // Aggiungi il libro al carrello locale
     this.carrelloItems.push(book);
-    this.cartResults = [...this.cartResults, book]; // Aggiungi il libro ai risultati del carrello
-    console.log('Aggiunto nella wishlist:', book);
+
+    // Effettua una richiesta PUT per aggiornare il carrello dell'utente sul server
+    const userId = 'user123'; // Sostituisci con l'ID dell'utente corrente
+    this.http
+      .put('/api/user/cart', { userId, books: this.carrelloItems })
+      .subscribe(
+        (response) => {
+          console.log('Libri nel carrello aggiornati con successo:', response);
+          // Puoi gestire la risposta dal server qui, se necessario
+        },
+        (error) => {
+          console.error('Errore durante laggiornamento del carrello:', error);
+          // Gestisci gli errori qui, se necessario
+        }
+      );
   }
 
   // ...

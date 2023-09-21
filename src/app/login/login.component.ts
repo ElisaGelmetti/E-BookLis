@@ -1,51 +1,7 @@
-// import { Component, OnInit } from '@angular/core';
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.scss'],
-// })
-// export class LoginComponent implements OnInit {
-//   signupUsers: any[] = [];
-//   signupObj: any = {
-//     username: '',
-//     email: '',
-//     password: '',
-//   };
-//   loginObj: any = {
-//     userName: 'Elisa',
-//     password: 'Ciao',
-//   };
-
-//   constructor() {}
-//   ngOnInit(): void {
-//     const localData = localStorage.getItem('signUpUsers');
-//     if (localData != null) {
-//       this.signupUsers = JSON.parse(localData);
-//     }
-//   }
-//   onSignUp() {
-//     this.signupUsers.push(this.signupObj);
-//     localStorage.setItem('signUpUsers', JSON.stringify(this.signupUsers));
-//     this.signupObj = {
-//       username: 'Elisa',
-//       email: 'elisa@yahoo.it',
-//       password: 'Bachi',
-//     };
-//     console.log('funziona');
-//   }
-//   onLogin() {
-//     const isUserExist = this.signupUsers.find(
-//       (m) => m.userName == this.loginObj.UserName && m.password == this.loginObj
-//     );
-//     if (isUserExist != undefined) {
-//       alert('Utente autorizzato');
-//     } else {
-//       alert('Utente autorizzato');
-//     }
-//   }
-// }
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; // Importa Router per reindirizzare l'utente
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -65,7 +21,11 @@ export class LoginComponent implements OnInit {
     password: '',
   };
 
-  constructor(private router: Router) {} // Inietta il servizio Router
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     const localData = localStorage.getItem('signUpUsers');
@@ -93,7 +53,19 @@ export class LoginComponent implements OnInit {
     } else {
       // Nome utente non esiste, quindi registra le credenziali
       this.signupUsers.push(this.signupObj);
-      localStorage.setItem('signUpUsers', JSON.stringify(this.signupUsers));
+
+      // Invia i dati al server tramite il servizio AuthService
+      this.authService.register(this.signupObj).subscribe(
+        (response) => {
+          console.log('Dati inviati al server:', response);
+          // Puoi gestire la risposta dal server qui, se necessario
+        },
+        (error) => {
+          console.error('Errore durante la registrazione:', error);
+          // Gestisci gli errori qui, se necessario
+        }
+      );
+
       this.signupObj = {
         username: '',
         email: '',
@@ -110,11 +82,15 @@ export class LoginComponent implements OnInit {
         user.password === this.loginObj.password
     );
 
-    if (isUserExist !== undefined) {
-      alert('Utente autorizzato');
-      this.router.navigate(['/home']); // Reindirizza alla pagina Home se le credenziali sono corrette
-    } else {
-      alert('Errore nelle credenziali');
-    }
+    this.authService.login(this.loginObj).subscribe(
+      (response) => {
+        console.log('Accesso consentito:', response);
+        // Altri gestioni della risposta, ad esempio reindirizzamento
+      },
+      (error) => {
+        console.error("Errore durante l'accesso:", error);
+        // Gestione degli errori
+      }
+    );
   }
 }

@@ -24,8 +24,6 @@ export class SearchComponent {
       // Ricevi i risultati della ricerca
       this.searchResults = data.items || [];
       console.log('Ricerca libri per:', this.searchTerm);
-      // Qui dovresti effettuare una chiamata API per recuperare i libri in base al termine di ricerca
-      // Successivamente, puoi visualizzare i risultati nel tuo componente principale o in un altro componente.
     });
   }
   addToCart(book: any) {

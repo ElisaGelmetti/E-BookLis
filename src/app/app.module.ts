@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
-
 import { CardComponent } from './card/card.component';
 import { CarrelloComponent } from './carrello/carrello.component';
 import { CartService } from './cart.service';
@@ -17,13 +16,9 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { BookDetailsModalComponent } from './book-details-modal/book-details-modal.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HorrorComponent } from './generi/horror/horror.component';
-import { FantasyComponent } from './generi/fantasy/fantasy.component';
-
 import { LoginComponent } from './login/login.component';
-
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -35,9 +30,7 @@ import { FooterComponent } from './footer/footer.component';
     SearchComponent,
     CardComponent,
     CarrelloComponent,
-    BookDetailsModalComponent,
-    HorrorComponent,
-    FantasyComponent,
+
     LoginComponent,
     WishlistComponent,
     FooterComponent,
