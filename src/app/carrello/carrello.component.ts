@@ -35,7 +35,7 @@ export class CarrelloComponent {
     this.loadBooks('avventura');
     const book = localStorage.getItem('usercarrello');
     if (book) this.books.push(JSON.parse(book));
-    console.log('CARRELLLOOOO', this.books);
+    console.log('Aggiunto nella Wishlist', this.books);
     this.book = this.router.snapshot;
   }
   //Nel metodo ngOnInit(), stai inizializzando il componente. Carichi i libri per i generi "horror", "fantasy" e "avventura"
@@ -76,7 +76,7 @@ export class CarrelloComponent {
   addToCart(book: any) {
     this.carrelloItems.push(book);
     this.cartResults = [...this.cartResults, book]; // Aggiungi il libro ai risultati del carrello
-    console.log('Aggiunto al carrello:', book);
+    console.log('Aggiunto nella wishlist:', book);
   }
 
   // ...

@@ -11,14 +11,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WishlistComponent {
   wishlistItems: any[] = [];
-
+  private carrelloItems: any[] = [];
   cart: any[] = []; // Array per i libri nel carrello
   showDescription = false; // Aggiungi questa linea per dichiarare showDescription
   cartItems: any[] = []; //Questa è una variabile che rappresenta gli oggetti nel tuo carrello. Inizialmente, è un array vuoto.
   books: Item[] = []; //Questa variabile è un array di oggetti Item. Non sembra essere utilizzata nel codice che hai fornito.
-
+  selectedBook: any;
   descriptionsMissing: boolean = false; //Questa variabile booleana indica se ci sono descrizioni mancanti per i libri di un certo genere
-
+  cartResults: any[] = [];
   constructor(private http: HttpClient, private router: ActivatedRoute) {}
 
   ngOnInit() {

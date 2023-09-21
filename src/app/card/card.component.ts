@@ -95,17 +95,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
+  wishlistItems: any[] = [];
   @Input() book: any = { showDescription: false };
   genres: { [key: string]: { booksWithDescription: any[] } } = {
     horror: { booksWithDescription: [] },
     fantasy: { booksWithDescription: [] },
     avventura: { booksWithDescription: [] },
   };
+
   cartItems: any[] = [];
   selectedBook: any;
   showDetailsAlert: boolean = false;
   descriptionsMissing: boolean = false;
   carrelloService: any;
+  carrelloItems: any;
+  cartResults: any[] = [];
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
@@ -140,13 +144,23 @@ export class CardComponent implements OnInit {
       }
     }
   }
-  addToCart(book: any) {
-    this.cartItems.push(book);
-    localStorage.setItem('userCarello', JSON.stringify(this.cartItems));
-    console.log('Aggiunto al carrello:', book);
-    this.router.navigate(['carrello'], { state: { book } });
-  }
+  // addToCart(book: any) {
+  //   this.cartItems.push(book);
+  //   localStorage.setItem('userCarello', JSON.stringify(this.cartItems));
+  //   console.log('Aggiunto al carrello:', book);
+  //   this.router.navigate(['carrello'], { state: { book } });
+  // }
   clearCart() {
     this.carrelloService.clearCarrello(); // Chiama la funzione per svuotare il carrello nel servizio
+  }
+  addToWishlist(book: any) {
+    this.wishlistItems.push(book);
+    localStorage.setItem('wishlist', JSON.stringify(book));
+    console.log('Aggiunto alla wishlist:', book.volumeInfo.title);
+  }
+  addToCart(book: any) {
+    this.carrelloItems.push(book);
+    this.cartResults = [...this.cartResults, book]; // Aggiungi il libro ai risultati del carrello
+    console.log('Aggiunto al carrello:', book);
   }
 }

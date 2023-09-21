@@ -1,559 +1,178 @@
-<!-- <div class="genre-cart">
-  <h2>Horror</h2>
-  <div class="book-card" *ngFor="let book of horrorBooks">
-    <app-book-details [book]="selectedBook"></app-book-details>
-    <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
-    <h3>{{ book.title }}</h3>
-    <button (click)="showDescription(book)">Mostra Descrizione</button>
-    <button (click)="addToCart(book)">Aggiungi al Carrello</button>
-    <div class="book-description" *ngIf="book.showDescription">
-      <a [href]="bookInfo.infoLink" target="_blank">Scopri di più</a>
-    </div>
-  </div>
-</div>
-<div class="genre-cart">
-  <h2>FANTASY</h2>
-  <div class="book-card" *ngFor="let book of fantasyBooks">
-    <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
-    <h3>{{ book.title }}</h3>
-    <button (click)="showDescription(book)">Mostra Descrizione</button>
-    <button (click)="addToCart(book)">Aggiungi al Carrello</button>
-    <div class="book-description" *ngIf="book.showDescription">
-      <p>{{ book.description || "Descrizione non disponibile." }}</p>
-    </div>
-  </div>
-</div>
+<!-- CARD -->
 
-<div class="genre-cart">
-  <h2>Avventura</h2>
-  <div class="book-card" *ngFor="let book of adventureBooks">
-    <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
-    <h3>{{ book.title }}</h3>
-    <button (click)="showDescription(book)">Mostra Descrizione</button>
-    <button (click)="addToCart(book)">Aggiungi al Carrello</button>
-    <div class="book-description" *ngIf="book.showDescription">
-      <p>{{ book.description || "Descrizione non disponibile." }}</p>
-    </div>
-  </div>
-</div>
+<section class="light">
+  <div class="container py-2">
+    <h1>Novità</h1>
 
-Ripeti lo stesso per i generi fantasy e avventura -->
-
-<!-- <div class="genre-cart">
-  <h2>Horror</h2>
-  <div
-    class="book-card"
-    *ngFor="let book of genres['horror'].booksWithDescription"
-  >
-    <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
-    <h3>{{ book.title }}</h3>
-    <p *ngIf="showDetails">{{ book.description }}</p>
-    <button (click)="showDetails(book)">Dettagli</button>
-    <button (click)="addToCart(book)">Aggiungi al Carrello</button>
-  </div>
-</div>
-<div class="genre-cart">
-  <h2>Fantasy</h2>
-  <div
-    class="book-card"
-    *ngFor="let book of genres['fantasy'].booksWithDescription"
-  >
-    <div
-      class="book-card"
-      *ngFor="let book of genres['fantasy'].booksWithDescription"
-    >
-      <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
-      <h3>{{ book.title }}</h3>
-      <button (click)="showDetails(book)">Dettagli</button>
-      <button (click)="addToCart(book)">Aggiungi al Carrello</button>
-    </div>
-  </div>
-
-  <div class="genre-cart">
-    <h2>Avventura</h2>
-    <div
-      class="book-card"
-      *ngFor="let book of genres['avventura'].booksWithDescription"
-    >
-      <img [src]="book.imageLinks?.thumbnail" alt="Copertina del libro" />
-      <h3>{{ book.title }}</h3>
-      <button (click)="showDetails(book)">Dettagli</button>
-      <button (click)="addToCart(book)">Aggiungi al Carrello</button>
-      <button [routerLink]="['/carrello']">Visualizza Carrello</button>
-    </div>
-  </div>
-
-  <div *ngIf="selectedBook">
-
-  </div>
-</div> -->
-
-<!-- ESEMPIO:::::::::::::::::::::::::::::::::::::::::::: -->
-
-<!-- <div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="princing-table">
-        <h2>Horror</h2>
-        <div class="card-deck d-flex flex-row flex-wrap">
-          <div
-            class="card"
-            *ngFor="let book of genres['horror'].booksWithDescription"
-          >
-            <img
-              [src]="book.imageLinks?.thumbnail"
-              class="card-img-top"
-              alt="Copertina del libro"
-            />
-            <div class="card-body">
-              <h3 class="card-title">{{ book.title }}</h3>
-              <button class="btn btn-primary" (click)="showDetails(book)">
-                Dettagli
-              </button>
-              <button
-                class="btn btn-success"
-                [routerLink]="['/carrello']"
-                (click)="addToCart(book)"
-              >
-                Aggiungi al Carrello
-              </button> -->
-<!-- Dettaglio del libro -->
-<!-- <div class="container mt-4" *ngIf="selectedBook">
-                <div class="row">
-                  <div class="col">
-                    <div class="card">
-                      <div class="card-body">
-                        <h2 class="card-title">{{ selectedBook.title }}</h2>
-                        <img
-                          [src]="selectedBook.imageLinks?.thumbnail"
-                          class="card-img-top"
-                          alt="Copertina del libro"
-                        />
-                        <p class="card-text">
-                          Descrizione:
-                          {{
-                            selectedBook.description ||
-                              "Nessuna descrizione disponibile."
-                          }}
-                        </p>
-                        <button
-                          class="btn btn-primary"
-                          (click)="selectedBook = null"
-                        >
-                          Chiudi Dettagli
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-
-<!-- Alert se il libro non è presente -->
-<!-- <div class="container mt-4" *ngIf="!selectedBook">
-                <div class="row">
-                  <div class="col">
-                    <div class="alert alert-danger">
-                      Il libro non è presente.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <article class="postcard light blue">
+      <a class="postcard__img_link" href="#">
+        <img
+          class="postcard__img"
+          src="https://www.ibs.it/images/9788804760597_0_536_0_75.jpg"
+          alt="Image Title"
+        />
+      </a>
+      <div class="postcard__text t-dark">
+        <h1 class="postcard__title blue">
+          <a href="#">Le armi della luce</a>
+        </h1>
+        <div class="postcard__subtitle small">
+          <time datetime="2020-05-25 ">
+            <i class="fas fa-calendar-alt mr-2"></i>Ken Follett
+          </time>
         </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- fantasy -->
-
-<div class="col">
-  <!-- Resto del codice... -->
-
-  <!-- <div class="genre-cart">
-                  <h2>FANTASY</h2>
-                  <div class="card-deck d-flex flex-row flex-wrap">
-                    <div
-                      class="card"
-                      *ngFor="
-                        let book of genres['fantasy'].booksWithDescription
-                      "
-                    >
-                      <img
-                        [src]="book.imageLinks?.thumbnail"
-                        class="card-img-top"
-                        alt="Copertina del libro"
-                      />
-                      <div class="card-body">
-                        <h3 class="card-title">{{ book.title }}</h3>
-                        <button
-                          class="btn btn-primary"
-                          (click)="showDetails(book)"
-                        >
-                          Dettagli
-                        </button>
-                       Esempio di chiamata alla funzione addToCart con un libro come argomento
-                        <div
-                          class="card"
-                          *ngFor="
-                            let book of genres['horror'].booksWithDescription
-                          "
-                        > -->
-  <!-- ... altre parti del tuo codice ... -->
-  <!-- <button
-                            class="btn btn-success"
-                            [routerLink]="['/carrello']"
-                            (click)="addToCart(book)"
-                          >
-                            Aggiungi al Carrello
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-
-  <!-- AVVENTURA -->
-
-  <div class="col">
-    <!-- Resto del codice... -->
-
-    <!-- <div class="genre-cart">
-                  <h2>Avventura</h2>
-                  <div class="card-deck d-flex flex-row flex-wrap">
-                    <div
-                      class="card"
-                      *ngFor="
-                        let book of genres['avventura'].booksWithDescription
-                      "
-                    >
-                      <img
-                        [src]="book.imageLinks?.thumbnail"
-                        class="card-img-top"
-                        alt="Copertina del libro"
-                      />
-                      <div class="card-body">
-                        <h3 class="card-title">{{ book.title }}</h3>
-                        <button
-                          class="btn btn-primary"
-                          (click)="showDetails(book)"
-                        >
-                          Dettagli
-                        </button>
-                        <button
-                          class="btn btn-success"
-                          [routerLink]="['/carrello']"
-                          (click)="addToCart(book)"
-                        >
-                          Aggiungi al Carrello
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="postcard__bar"></div>
+        <div class="postcard__preview-txt">
+          Le armi della luce si svolge tra il 1792 e il 1824, un’epoca di
+          grandissimi cambiamenti in cui il progresso si scontra con le
+          tradizioni del vecchio mondo rurale e il governo dispotico è
+          determinato a fare dell’Inghilterra un potente impero commerciale. A
+          Kingsbridge l’industrializzazione si fa rapidamente strada riducendo
+          alla miseria la maggior parte della popolazione dedita alla
+          manifattura tessile, la principale fonte di reddito della città. La
+          vita di un gruppo di famiglie collegate tra loro viene stravolta dalla
+          nuova era delle macchine, mentre imperversa la guerra con la vicina
+          Francia di Napoleone Bonaparte che giunge alla sua epocale conclusione
+          con la battaglia di Waterloo.
         </div>
-      </div>
-    </div>
-  </div>
-</div> -->
+        <ul class="postcard__tagbox">
+          <li class="tag__item">
+            <i class="fas fa-tag mr-2"></i>Narrattiva straniera
+          </li>
+          <li class="tag__item">
+            <i class="fas fa-clock mr-2"></i>Disp. dal 26 Settembre 2023
+          </li>
 
-    <div class="container">
-      <!-- Riga 1: Genere Horror -->
-      <!-- <div class="row">
-        <div class="col">
-          <div class="genre-cart">
-            <h2>Horror</h2>
-            <div class="card-deck d-flex flex-row flex-wrap">
-              <div
-                class="card"
-                *ngFor="let book of genres['horror'].booksWithDescription"
-              >
-                <img
-                  [src]="book.imageLinks?.thumbnail"
-                  class="card-img-top"
-                  alt="Copertina del libro"
-                />
-
-                <div class="card-body">
-                  <h3 class="card-title">{{ book.title }}</h3>
-                  <h3 class="card-title">{{ book.authors }}</h3>
-                  <button class="btn btn-primary" (click)="showDetails(book)">
-                    Dettagli
-                  </button>
-                  <button
-                    class="tn btn-success custom-button"
-                    (click)="addToCart(book)"
-                  >
-                    Aggiungi al Carrello
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-      <!-- Riga 2: Genere Fantasy -->
-      <!-- <div class="row">
-      <div class="col">
-        <div class="genre-cart">
-          <h2>Fantasy</h2>
-          <div class="card-deck d-flex flex-row flex-wrap">
-            <div
-              class="card"
-              *ngFor="let book of genres['fantasy'].booksWithDescription"
-            >
-              <img
-                [src]="book.imageLinks?.thumbnail"
-                class="card-img-top"
-                alt="Copertina del libro"
-              />
-              <div class="card-body">
-                <h3 class="card-title">{{ book.title }}</h3>
-                <button class="btn btn-primary" (click)="showDetails(book)">
-                  Dettagli
-                </button>
-                <button
-                  class="tn btn-success custom-button"
-                  (click)="addToCart(book)"
-                >
-                  Aggiungi al Carrello
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-      <!-- Riga 3: Genere Avventura -->
-      <!-- <div class="row">
-      <div class="col">
-        <div class="genre-cart">
-          <h2>Avventura</h2>
-          <div class="card-deck d-flex flex-row flex-wrap">
-            <div
-              class="card"
-              *ngFor="let book of genres['avventura'].booksWithDescription"
-            >
-              <img
-                [src]="book.imageLinks?.thumbnail"
-                class="card-img-top"
-                alt="Copertina del libro"
-              />
-              <div class="card-body">
-                <h3 class="card-title">{{ book.title }}</h3>
-                <button class="btn btn-primary" (click)="showDetails(book)">
-                  Dettagli
-                </button>
-                <button
-                  class="tn btn-success custom-button"
-                  (click)="addToCart(book)"
-                >
-                  Aggiungi al Carrello
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-      <!-- PRECOMPILATI -->
-
-      <section class="light">
-        <div class="container py-2">
-          <div class="h1 text-center text-dark" id="pageHeaderTitle">
-            Novità
-          </div>
-
-          <article class="postcard light blue">
-            <a class="postcard__img_link" href="#">
-              <img
-                class="postcard__img"
-                src="https://www.ibs.it/images/9788804760597_0_536_0_75.jpg"
-                alt="Image Title"
-              />
-            </a>
-            <div class="postcard__text t-dark">
-              <h1 class="postcard__title blue">
-                <a href="#">Le armi della luce</a>
-              </h1>
-              <div class="postcard__subtitle small">
-                <time datetime="2020-05-25 ">
-                  <i class="fas fa-calendar-alt mr-2"></i>Ken Follett
-                </time>
-              </div>
-              <div class="postcard__bar"></div>
-              <div class="postcard__preview-txt">
-                Le armi della luce si svolge tra il 1792 e il 1824, un’epoca di
-                grandissimi cambiamenti in cui il progresso si scontra con le
-                tradizioni del vecchio mondo rurale e il governo dispotico è
-                determinato a fare dell’Inghilterra un potente impero
-                commerciale. A Kingsbridge l’industrializzazione si fa
-                rapidamente strada riducendo alla miseria la maggior parte della
-                popolazione dedita alla manifattura tessile, la principale fonte
-                di reddito della città. La vita di un gruppo di famiglie
-                collegate tra loro viene stravolta dalla nuova era delle
-                macchine, mentre imperversa la guerra con la vicina Francia di
-                Napoleone Bonaparte che giunge alla sua epocale conclusione con
-                la battaglia di Waterloo.
-              </div>
-              <ul class="postcard__tagbox">
-                <li class="tag__item">
-                  <i class="fas fa-tag mr-2"></i>Narrattiva straniera
-                </li>
-                <li class="tag__item">
-                  <i class="fas fa-clock mr-2"></i>Disp. dal 26 Settembre 2023
-                </li>
-                <!-- <li class="tag__item play blue">
+          <!-- <li class="tag__item play blue">
                    <a href="#"><i class="fas fa-play mr-2"></i>Compra</a>
                 </li> -->
-              </ul>
-            </div>
-          </article>
-          <article class="postcard light red">
-            <a class="postcard__img_link" href="#">
-              <img
-                class="postcard__img"
-                src="https://www.ibs.it/images/9788811010685_0_536_0_75.jpg"
-                alt="Image Title"
-              />
-            </a>
-            <div class="postcard__text t-dark">
-              <h1 class="postcard__title red">
-                <a href="#">Volevamo prendere il cielo</a>
-              </h1>
-              <div class="postcard__subtitle small">
-                <time datetime="2020-05-25 12:00:00">
-                  <i class="fas fa-calendar-alt mr-2"></i>Federica Bosco
-                </time>
-              </div>
-              <div class="postcard__bar"></div>
-              <div class="postcard__preview-txt">
-                È il 1995 quando Linda conosce Corinna, che arriva in classe nel
-                fatidico anno della maturità, pieno di sogni e aspettative. Ma
-                mentre Linda è una ragazza come tante, con una famiglia di
-                modeste possibilità, Corinna è ricca da far paura, di quelle
-                ricchezze spropositate, imbarazzanti, difficili da immaginare,
-                dove il lusso e l'eccesso sono la normalità. Se Linda può
-                permettersi due paia di scarpe l'anno e si sposta in autobus,
-                Corinna possiede una cabina armadio stracolma di abiti di
-                stilisti di grido e va a scuola con l'autista. Ma, nonostante la
-                differenza di ceto sociale, Corinna è una ragazza semplice e
-                generosa, e le due diventano grandi amiche. C'è qualcuno, però,
-                che presto diviene protagonista indiscusso del cuore di Linda:
-                Leonardo, il fratello maggiore di Corinna. La ragazza se ne
-                innamora perdutamente, anche se lui è proiettato in un futuro di
-                affari internazionali cucitogli addosso dalla famiglia.
-              </div>
-              <ul class="postcard__tagbox">
-                <li class="tag__item">
-                  <i class="fas fa-tag mr-2"></i>Romantico
-                </li>
-                <li class="tag__item">
-                  <i class="fas fa-clock mr-2"></i>Disp. dal 19 Settembre 2023
-                </li>
-                <!-- <li class="tag__item play red">
+        </ul>
+      </div>
+    </article>
+    <article class="postcard light red">
+      <a class="postcard__img_link" href="#">
+        <img
+          class="postcard__img"
+          src="https://www.ibs.it/images/9788811010685_0_536_0_75.jpg"
+          alt="Image Title"
+        />
+      </a>
+      <div class="postcard__text t-dark">
+        <h1 class="postcard__title red">
+          <a href="#">Volevamo prendere il cielo</a>
+        </h1>
+        <div class="postcard__subtitle small">
+          <time datetime="2020-05-25 12:00:00">
+            <i class="fas fa-calendar-alt mr-2"></i>Federica Bosco
+          </time>
+        </div>
+        <div class="postcard__bar"></div>
+        <div class="postcard__preview-txt">
+          È il 1995 quando Linda conosce Corinna, che arriva in classe nel
+          fatidico anno della maturità, pieno di sogni e aspettative. Ma mentre
+          Linda è una ragazza come tante, con una famiglia di modeste
+          possibilità, Corinna è ricca da far paura, di quelle ricchezze
+          spropositate, imbarazzanti, difficili da immaginare, dove il lusso e
+          l'eccesso sono la normalità. Se Linda può permettersi due paia di
+          scarpe l'anno e si sposta in autobus, Corinna possiede una cabina
+          armadio stracolma di abiti di stilisti di grido e va a scuola con
+          l'autista. Ma, nonostante la differenza di ceto sociale, Corinna è una
+          ragazza semplice e generosa, e le due diventano grandi amiche. C'è
+          qualcuno, però, che presto diviene protagonista indiscusso del cuore
+          di Linda: Leonardo, il fratello maggiore di Corinna. La ragazza se ne
+          innamora perdutamente, anche se lui è proiettato in un futuro di
+          affari internazionali cucitogli addosso dalla famiglia.
+        </div>
+        <ul class="postcard__tagbox">
+          <li class="tag__item"><i class="fas fa-tag mr-2"></i>Romantico</li>
+          <li class="tag__item">
+            <i class="fas fa-clock mr-2"></i>Disp. dal 29 Settembre 2023
+          </li>
+          <!-- <li class="tag__item play red">
                   <a href="/carrello"
                     ><i class="fas fa-play mr-2"></i>Carrello</a
                   >
                 </li> -->
-              </ul>
-            </div>
-          </article>
-          <article class="postcard light green">
-            <a class="postcard__img_link" href="#">
-              <img
-                class="postcard__img"
-                src="https://www.ibs.it/images/9788858045121_0_536_0_75.jpg"
-                alt="Image Title"
-              />
-            </a>
-            <div class="postcard__text t-dark">
-              <h1 class="postcard__title green">
-                <a href="#">PFabula. Il portale dei tredici regni</a>
-              </h1>
-              <div class="postcard__subtitle small">
-                <time datetime="2020-05-25 12:00:00">
-                  <i class="fas fa-calendar-alt mr-2"></i>Akram El-Bahay
-                </time>
-              </div>
-              <div class="postcard__bar"></div>
-              <div class="postcard__preview-txt">
-                Il desiderio di avventura gli esplose dentro all’improvviso,
-                ardente, risvegliando in lui qualcosa che doveva essere stato
-                lì, sonnecchiante, già da tempo. Era un sentimento più
-                inebriante anche delle sue bugie più ardite. «Sì» rispose
-                deciso. Con il cuore in tumulto fece il primo passo. E là sotto,
-                avviluppato alle radici, qualcosa aprì un occhio. Dormiente.
-                Sognante. Aveva sentito una voce. Una voce che stava aspettando.
-                Una voce che lo aveva svegliato.
-              </div>
-              <ul class="postcard__tagbox">
-                <li class="tag__item">
-                  <i class="fas fa-tag mr-2"></i>Fantasy
-                </li>
-                <li class="tag__item">
-                  <i class="fas fa-clock mr-2"></i>Disp. dal 6 Giugno 2023
-                </li>
-                <!-- <li class="tag__item play green">
-                  <a href="#"><i class="fas fa-play mr-2"></i>Compra</a>
-                </li> -->
-              </ul>
-            </div>
-          </article>
-          <article class="postcard light yellow">
-            <a class="postcard__img_link" href="#">
-              <img
-                class="postcard__img"
-                src="https://www.ibs.it/images/9791280712424_0_536_0_75.jpg"
-                alt="Image Title"
-              />
-            </a>
-            <div class="postcard__text t-dark">
-              <h1 class="postcard__title yellow">
-                <a href="#">Ci penseranno i fiori</a>
-              </h1>
-              <div class="postcard__subtitle small">
-                <time datetime="25-05-2020">
-                  <i class="fas fa-calendar-alt mr-2"></i>Giorgio Ricci
-                </time>
-              </div>
-              <div class="postcard__bar"></div>
-              <div class="postcard__preview-txt">
-                Fiori come arma di vendetta, fiori mossi da una naturale
-                predisposizione a farsi giustizia sommaria, fiori che prendono
-                vita (intesa come vita animale) per punire crudelmente scelte
-                discutibili e gravi peccati. Racconto dopo racconto una natura
-                inquietante, alcune volte orchestrata da menti umane, giustizia
-                chi si è macchiato di un tradimento, di un omicidio, di una
-                violenza, di un rapimento. Undici storie in cui qualcosa di
-                dirompente invade la “normalità” di abitazioni, borghi,
-                campagne. Undici racconti maledetti in cui a cadere non saranno
-                solamente i colpevoli.
-              </div>
-              <ul class="postcard__tagbox">
-                <li class="tag__item"><i class="fas fa-tag mr-2"></i>Giallo</li>
-                <li class="tag__item">
-                  <i class="fas fa-clock mr-2"></i>Disp. dal 12 Settembre 2023
-                </li>
-                <!-- <li class="tag__item play yellow">
-                  <a href="#"><i class="fas fa-play mr-2"></i>Compra</a>
-                </li> -->
-              </ul>
-            </div>
-          </article>
+        </ul>
+      </div>
+    </article>
+    <article class="postcard light green">
+      <a class="postcard__img_link" href="#">
+        <img
+          class="postcard__img"
+          src="https://www.ibs.it/images/9788858045121_0_536_0_75.jpg"
+          alt="Image Title"
+        />
+      </a>
+      <div class="postcard__text t-dark">
+        <h1 class="postcard__title green">
+          <a href="#">PFabula. Il portale dei tredici regni</a>
+        </h1>
+        <div class="postcard__subtitle small">
+          <time datetime="2020-05-25 12:00:00">
+            <i class="fas fa-calendar-alt mr-2"></i>Akram El-Bahay
+          </time>
         </div>
-      </section>
-    </div>
+        <div class="postcard__bar"></div>
+        <div class="postcard__preview-txt">
+          Il desiderio di avventura gli esplose dentro all’improvviso, ardente,
+          risvegliando in lui qualcosa che doveva essere stato lì,
+          sonnecchiante, già da tempo. Era un sentimento più inebriante anche
+          delle sue bugie più ardite. «Sì» rispose deciso. Con il cuore in
+          tumulto fece il primo passo. E là sotto, avviluppato alle radici,
+          qualcosa aprì un occhio. Dormiente. Sognante. Aveva sentito una voce.
+          Una voce che stava aspettando. Una voce che lo aveva svegliato.
+        </div>
+        <ul class="postcard__tagbox">
+          <li class="tag__item"><i class="fas fa-tag mr-2"></i>Fantasy</li>
+          <li class="tag__item">
+            <i class="fas fa-clock mr-2"></i>Disp. dal 6 Ottobre 2023
+          </li>
+          <!-- <li class="tag__item play green">
+                  <a href="#"><i class="fas fa-play mr-2"></i>Compra</a>
+                </li> -->
+        </ul>
+      </div>
+    </article>
+    <article class="postcard light yellow">
+      <a class="postcard__img_link" href="#">
+        <img
+          class="postcard__img"
+          src="https://www.ibs.it/images/9791280712424_0_536_0_75.jpg"
+          alt="Image Title"
+        />
+      </a>
+      <div class="postcard__text t-dark">
+        <h1 class="postcard__title yellow">
+          <a href="#">Ci penseranno i fiori</a>
+        </h1>
+        <div class="postcard__subtitle small">
+          <time datetime="25-05-2020">
+            <i class="fas fa-calendar-alt mr-2"></i>Giorgio Ricci
+          </time>
+        </div>
+        <div class="postcard__bar"></div>
+        <div class="postcard__preview-txt">
+          Fiori come arma di vendetta, fiori mossi da una naturale
+          predisposizione a farsi giustizia sommaria, fiori che prendono vita
+          (intesa come vita animale) per punire crudelmente scelte discutibili e
+          gravi peccati. Racconto dopo racconto una natura inquietante, alcune
+          volte orchestrata da menti umane, giustizia chi si è macchiato di un
+          tradimento, di un omicidio, di una violenza, di un rapimento. Undici
+          storie in cui qualcosa di dirompente invade la “normalità” di
+          abitazioni, borghi, campagne. Undici racconti maledetti in cui a
+          cadere non saranno solamente i colpevoli.
+        </div>
+        <ul class="postcard__tagbox">
+          <li class="tag__item"><i class="fas fa-tag mr-2"></i>Giallo</li>
+          <li class="tag__item">
+            <i class="fas fa-clock mr-2"></i>Disp. dal 12 Settembre 2023
+          </li>
+          <!-- <li class="tag__item play yellow">
+                  <a href="#"><i class="fas fa-play mr-2"></i>Compra</a>
+                </li> -->
+        </ul>
+      </div>
+    </article>
   </div>
-</div>
+</section>

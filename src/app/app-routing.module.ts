@@ -9,7 +9,7 @@ import { CardComponent } from './card/card.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { AuthorInfoComponent } from './author-info/author-info.component';
+
 import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
@@ -19,7 +19,6 @@ const routes: Routes = [
   { path: 'card', component: CardComponent },
   { path: 'carrello', component: CarrelloComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'author/:authorId', component: AuthorInfoComponent }, // Rotta per le informazioni sull'autore
   { path: 'wishlist', component: WishlistComponent },
 ];
 

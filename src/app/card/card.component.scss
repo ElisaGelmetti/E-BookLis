@@ -1,8 +1,15 @@
 /* Stile per il container principale */
+
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
 .col {
   margin: 10px;
 }
 
+h1 {
+  color: #ef8e76;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
 /* Stile per il titolo del genere */
 .genre-cart h2 {
   font-size: 20px;
@@ -77,9 +84,9 @@
   background-color: #f0b4a4;
 }
 
-// PRECOMPILATI
+// CARD
 
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
 $main-green: #ef8e76 !default;
 $main-green-rgb-015: #f0b4a4 !default;
 $main-yellow: #ef8e76 !default;
@@ -104,14 +111,6 @@ a:hover {
   transition: color 0.3s ease-in-out;
 }
 
-#pageHeaderTitle {
-  margin: 2rem 0;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 2.5rem;
-  color: #ef8e76;
-}
-
 /* Cards */
 .postcard {
   flex-wrap: wrap;
@@ -122,7 +121,6 @@ a:hover {
   margin: 0 0 2rem 0;
   overflow: hidden;
   position: relative;
-  color: #474545;
 
   &.light {
     background-color: #f3dbd4;
@@ -217,7 +215,7 @@ a:hover {
     left: 0;
     background-image: linear-gradient(-70deg, #424242, transparent 50%);
     opacity: 1;
-    border-radius: 63px;
+    border-radius: 40px;
   }
 
   &:hover .postcard__bar {

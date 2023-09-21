@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
+
 .about {
   $cubic: cubic-bezier(0.64, 0.01, 0.07, 1.65);
   $transition: 0.6s $cubic;
@@ -450,12 +452,12 @@ a:hover {
   }
 
   h1,
-  .h1 {
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    line-height: 1.2;
-    color: #454547;
-  }
+  // .h1 {
+  //   margin-bottom: 0.5rem;
+  //   font-weight: 500;
+  //   line-height: 1.2;
+  //   color: #454547;
+  // }
 
   .small {
     font-size: 80%;
@@ -467,13 +469,13 @@ a:hover {
 
   .postcard__img {
     height: 380px;
-    width: 100%;
+    width: 40%;
     object-fit: cover;
     position: relative;
   }
 
   .postcard__img_link {
-    margin-top: 5%;
+    margin-top: 2%;
     width: auto;
     height: auto;
   }

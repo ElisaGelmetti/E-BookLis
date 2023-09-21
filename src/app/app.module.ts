@@ -21,10 +21,11 @@ import { BookDetailsModalComponent } from './book-details-modal/book-details-mod
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HorrorComponent } from './generi/horror/horror.component';
 import { FantasyComponent } from './generi/fantasy/fantasy.component';
-import { AvventuraComponent } from './generi/avventura/avventura.component';
+
 import { LoginComponent } from './login/login.component';
-import { AuthorInfoComponent } from './author-info/author-info.component';
+
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,18 +33,14 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     HomeComponent,
     CartComponent,
     SearchComponent,
-
     CardComponent,
-
     CarrelloComponent,
-
     BookDetailsModalComponent,
     HorrorComponent,
     FantasyComponent,
-    AvventuraComponent,
     LoginComponent,
-    AuthorInfoComponent,
     WishlistComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

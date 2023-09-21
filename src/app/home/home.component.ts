@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  wishlistItems: any[] = [];
   private apiUrl = 'https://www.googleapis.com/books/v1/volumes';
   private apiKey = 'AIzaSyCRXtIP3pECh9gnLWzSzoAYuxw1AHAfZWs';
   bookInfo: any; // Variabile per memorizzare le informazioni sul libro
@@ -63,5 +64,10 @@ export class HomeComponent implements OnInit {
           this.bookInfo = data.items[0].volumeInfo;
         }
       });
+  }
+  addToWishlist(book: any) {
+    this.wishlistItems.push(book);
+    localStorage.setItem('wishlist', JSON.stringify(book));
+    console.log('Aggiunto alla wishlist:', book.volumeInfo.title);
   }
 }

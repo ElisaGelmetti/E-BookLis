@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
+
+footer {
+  border-radius: 15px;
+  background-color: #ef8e76; /* Cambia il colore di sfondo se necessario */
+  padding: 20px;
+  margin-top: 50px; /* Aggiungi margine superiore se necessario */
+  opacity: 73%;
+}
+
+/* Stile per i pulsanti social */
+.btn-floating {
+  border-radius: 50%; /* Rendi i pulsanti rotondi */
+  padding: 10px; /* Regola il padding se necessario */
+  margin: 5px; /* Regola il margine se necessario */
+}
+
+/* Stile per il modulo di iscrizione alla newsletter */
+.form-outline {
+  border-radius: 10px; /* Rendi il campo di input arrotondato */
+}
+
+/* Stile per il pulsante di invio del modulo */
+.btn-outline-light {
+  border-radius: 10px; /* Rendi il pulsante arrotondato */
+}
+
+/* Stile per il copyright */
+.text-center p {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #f29a84; //coloro sign up
+  padding: 10px;
+  margin-top: -3px;
+}
+
+/* Stile per i link nel footer */
+.text-white a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Cambia il colore del testo e del bordo degli input quando vengono selezionati */
+.form-control:focus {
+  border-color: #333;
+  color: #333;
+}
+
+.mb-4 .btn-floating {
+  width: 40px; /* Imposta la larghezza */
+  height: 40px; /* Imposta l'altezza */
+  border-radius: 50%; /* Rendi i pulsanti cerchi */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imposta lo spazio tra i pulsanti */
+.mb-4 .btn-floating + .btn-floating {
+  margin-left: 5px; /* Regola il margine tra i pulsanti */
+}
+
+/* Stile per i link nel footer */
+.text-white a {
+  color: white;
+  text-decoration: none;
+}
+
+section.mb-4 {
+  display: flex;
+  margin-left: 40%;
+}

@@ -6,9 +6,10 @@
         <a class="mainNav__link" routerLink="/home">Home</a>
       </li>
       <!-- <li><a class="mainNav__link" routerLink="/card">Card</a></li> -->
-      <li><a class="mainNav__link" routerLink="/wishlist">Wish List</a></li>
       <li><a class="mainNav__link" routerLink="/search">Ricerca</a></li>
-      <li><a class="mainNav__link" routerLink="/carrello">Carrello</a></li>
+      <!-- <li><a class="mainNav__link" routerLink="/wishlist">Wish List</a></li> -->
+
+      <li><a class="mainNav__link" routerLink="/carrello">WishList</a></li>
 
       <li><a class="mainNav__link" routerLink="/login">Login</a></li>
     </ul>
@@ -34,26 +35,7 @@
   </div>
 </nav>
 
-<!-- <h1>
-  {{ books[0].volumeInfo.title }}
-</h1>
-<img
-  [src]="book[0].volumeInfo.imageLinks?.thumbnail"
-  alt="Copertina del libro"
-/>
-<h2>
-  {{ books[0].volumeInfo.description }}
-</h2> -->
-<!-- <div *ngFor="let book of books" class="cart-item">
-  <h1>{{ book.volumeInfo.title }}</h1>
-  <img
-    [src]="book.volumeInfo.imageLinks?.thumbnail"
-    alt="Copertina del libro"
-  />
-  <h2>{{ book.volumeInfo.description }}</h2>
-  <button (click)="removeFromCart(book)">Togli dal carrello</button>
-</div> -->
-<h1>il tuo carello</h1>
+<h1>La tua WishList</h1>
 <div *ngFor="let book of books" class="cart-item">
   <section class="light">
     <div class="container py-2">
@@ -89,7 +71,9 @@
               >{{ book.volumeInfo.publishedDate }}
             </li>
             <li class="tag__item play blue">
-              <button (click)="removeFromCart(book)">Togli dal carrello</button>
+              <button (click)="removeFromCart(book)">
+                Rimuovi dalla wishlist
+              </button>
             </li>
           </ul>
         </div>

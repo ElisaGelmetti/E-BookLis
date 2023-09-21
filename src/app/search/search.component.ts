@@ -31,7 +31,7 @@ export class SearchComponent {
   addToCart(book: any) {
     this.cartItems.push(book);
     localStorage.setItem('usercarrello', JSON.stringify(book));
-    console.log('Aggiunto al Carrello:', book.volumeInfo.title);
+    console.log('Aggiunto nella Wishlist:', book.volumeInfo.title);
   }
 
   addToWishlist(book: any) {
