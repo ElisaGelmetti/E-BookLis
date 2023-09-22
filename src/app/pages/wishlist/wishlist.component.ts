@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from '../api.services';
-import { Item } from '../interfaces/libro';
+import { ApiService } from '../../api.services';
+import { Item } from '../../interfaces/libro';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-wishlist',

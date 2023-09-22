@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router'; // Importa Router per reindirizzare l'utente
-import { IRegister } from '../interfaces/register';
-import { ILogin } from '../interfaces/login';
-import { IAccesData } from '../interfaces/acces-data';
+import { IRegister } from '../../interfaces/register';
+import { ILogin } from '../../interfaces/login';
+import { IAccesData } from '../../interfaces/acces-data';
 
 @Component({
   selector: 'app-login',

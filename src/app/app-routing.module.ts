@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 
 import { AppComponent } from './app.component';
-import { CarrelloComponent } from './carrello/carrello.component';
-import { CardComponent } from './card/card.component';
+import { CarrelloComponent } from './pages/carrello/carrello.component';
+import { CardComponent } from './pages/card/card.component';
 
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { WishlistComponent } from './wishlist/wishlist.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },

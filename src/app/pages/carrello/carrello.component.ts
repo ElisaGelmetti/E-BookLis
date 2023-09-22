@@ -1,13 +1,13 @@
-import { CartBook, Item } from './../interfaces/libro';
+import { CartBook, Item } from '../../interfaces/libro';
 import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Libri, VolumeInfo } from '../interfaces/libro';
+import { Libri, VolumeInfo } from '../../interfaces/libro';
 import { Injectable } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from '../api.services';
-import { SearchComponent } from '../search/search.component';
+import { ApiService } from '../../api.services';
+import { SearchComponent } from '../../components/footer/search/search.component';
 @Component({
   selector: 'app-carrello',
   templateUrl: './carrello.component.html',
