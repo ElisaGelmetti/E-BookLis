@@ -2,8 +2,7 @@ import { ApiService } from './../api.services';
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { timer, throwError } from 'rxjs';
-import { retryWhen, mergeMap } from 'rxjs/operators';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',

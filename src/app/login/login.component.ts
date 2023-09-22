@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router) {} // Inietta il servizio Router
 
   ngOnInit(): void {
+    // Recupera dati di registrazione dall'archivio locale
     const localData = localStorage.getItem('signUpUsers');
     if (localData != null) {
       this.signupUsers = JSON.parse(localData);
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
 
   onSignUp() {
     console.log('Dati di registrazione inseriti:', this.signupObj);
+
     // Verifica se il nome utente e la password sono stati inseriti
     if (
       this.signupObj.username.trim() === '' ||
@@ -65,6 +67,8 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     console.log('dati inseriti:', this.loginObj);
+
+    // Verifica se le credenziali di accesso sono corrette
     const isUserExist = this.signupUsers.find(
       (user) =>
         user.username === this.loginObj.username &&

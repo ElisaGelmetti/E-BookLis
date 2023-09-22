@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-
+import { environment } from 'src/enviroments/enviroment.development';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
 import { CarrelloComponent } from './carrello/carrello.component';
@@ -21,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { FooterComponent } from './footer/footer.component';
 import { ApiService } from './api.services';
+
 @NgModule({
   declarations: [
     AppComponent,

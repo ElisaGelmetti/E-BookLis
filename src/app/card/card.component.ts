@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
+  // Dichiarazione di variabili di classe
   wishlistItems: any[] = [];
   @Input() book: any = { showDescription: false };
   genres: { [key: string]: { booksWithDescription: any[] } } = {
@@ -15,7 +16,6 @@ export class CardComponent implements OnInit {
     fantasy: { booksWithDescription: [] },
     avventura: { booksWithDescription: [] },
   };
-
   cartItems: any[] = [];
   selectedBook: any;
   showDetailsAlert: boolean = false;
@@ -23,14 +23,12 @@ export class CardComponent implements OnInit {
   carrelloService: any;
   carrelloItems: any;
   cartResults: any[] = [];
+
   constructor(private http: HttpClient, private router: Router) {}
 
-  ngOnInit(): void {
-    this.loadBooks('horror');
-    this.loadBooks('fantasy');
-    this.loadBooks('avventura');
-  }
+  ngOnInit(): void {}
 
+  // Funzione per caricare libri da una fonte esterna per un genere specifico
   loadBooks(genre: string) {
     this.http
       .get(
@@ -38,6 +36,7 @@ export class CardComponent implements OnInit {
       )
       .subscribe((data: any) => {
         if (data.items && data.items.length > 0) {
+          // Estrai informazioni sui libri e controlla se ci sono descrizioni mancanti
           this.genres[genre].booksWithDescription = data.items.map(
             (item: any) => item.volumeInfo
           );
@@ -47,6 +46,8 @@ export class CardComponent implements OnInit {
         }
       });
   }
+
+  // Mostra i dettagli di un libro
   showDetails(book: any) {
     this.selectedBook = book;
     if (book.description) {
@@ -58,14 +59,19 @@ export class CardComponent implements OnInit {
     }
   }
 
+  // Svuota il carrello
   clearCart() {
     this.carrelloService.clearCarrello(); // Chiama la funzione per svuotare il carrello nel servizio
   }
+
+  // Aggiungi un libro alla lista dei desideri
   addToWishlist(book: any) {
     this.wishlistItems.push(book);
     localStorage.setItem('wishlist', JSON.stringify(book));
     console.log('Aggiunto alla wishlist:', book.volumeInfo.title);
   }
+
+  // Aggiungi un libro al carrello
   addToCart(book: any) {
     this.carrelloItems.push(book);
     this.cartResults = [...this.cartResults, book]; // Aggiungi il libro ai risultati del carrello
