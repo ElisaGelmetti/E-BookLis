@@ -16,12 +16,11 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { ApiService } from './api.services';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +50,7 @@ import { FooterComponent } from './footer/footer.component';
     CommonModule,
     NgbModalModule,
   ],
-  providers: [BookService, CartService],
+  providers: [BookService, CartService, ApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

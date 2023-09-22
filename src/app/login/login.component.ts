@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router'; // Importa Router per reindirizzare l'utente
 
 @Component({
@@ -7,6 +8,7 @@ import { Router } from '@angular/router'; // Importa Router per reindirizzare l'
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  [x: string]: any;
   isLoggedIn: boolean = false;
   signupUsers: any[] = [];
   signupObj: any = {

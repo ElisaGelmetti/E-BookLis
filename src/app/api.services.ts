@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { NgModel } from '@angular/forms';
 @Injectable({
   providedIn: 'root', // Questo servizio è fornito a livello globale
 })
