@@ -73,6 +73,7 @@ export class SearchComponent {
     this.cartItems.push(book);
     localStorage.setItem('usercarrello', JSON.stringify(book));
     console.log('Aggiunto nella Wishlist:', book.volumeInfo.title);
+    console.log('aiuto', this.cartItems);
   }
 
   addToWishlist(book: any) {

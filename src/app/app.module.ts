@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { CartComponent } from './cart/cart.component';
+
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
 import { CarrelloComponent } from './carrello/carrello.component';
@@ -25,7 +25,7 @@ import { ApiService } from './api.services';
   declarations: [
     AppComponent,
     HomeComponent,
-    CartComponent,
+
     SearchComponent,
     CardComponent,
     CarrelloComponent,

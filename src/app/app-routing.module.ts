@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { CartComponent } from './cart/cart.component';
 
 import { AppComponent } from './app.component';
 import { CarrelloComponent } from './carrello/carrello.component';
@@ -20,6 +19,10 @@ const routes: Routes = [
   { path: 'carrello', component: CarrelloComponent },
   { path: 'login', component: LoginComponent },
   { path: 'wishlist', component: WishlistComponent },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
 ];
 
 @NgModule({

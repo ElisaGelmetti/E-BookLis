@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router'; // Importa Router per reindirizzare l'utente
+import { IRegister } from '../interfaces/register';
+import { ILogin } from '../interfaces/login';
+import { IAccesData } from '../interfaces/acces-data';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +14,13 @@ export class LoginComponent implements OnInit {
   [x: string]: any;
   isLoggedIn: boolean = false;
   signupUsers: any[] = [];
-  signupObj: any = {
+  signupObj: IRegister = {
     username: '',
     email: '',
     password: '',
   };
-  loginObj: any = {
-    userName: '',
+  loginObj: ILogin = {
+    username: '',
     password: '',
   };
 
@@ -31,6 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSignUp() {
+    console.log('Dati di registrazione inseriti:', this.signupObj);
     // Verifica se il nome utente e la password sono stati inseriti
     if (
       this.signupObj.username.trim() === '' ||
@@ -60,9 +64,10 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
+    console.log('dati inseriti:', this.loginObj);
     const isUserExist = this.signupUsers.find(
       (user) =>
-        user.username === this.loginObj.userName &&
+        user.username === this.loginObj.username &&
         user.password === this.loginObj.password
     );
 

@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from '../api.services';
+import { SearchComponent } from '../search/search.component';
 @Component({
   selector: 'app-carrello',
   templateUrl: './carrello.component.html',
@@ -92,8 +93,6 @@ export class CarrelloComponent {
         }
       );
   }
-
-  // ...
 
   getCarrelloItems() {
     return this.carrelloItems;

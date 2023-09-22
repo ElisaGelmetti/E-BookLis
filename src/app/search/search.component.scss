@@ -59,28 +59,6 @@
       opacity: 0;
       border-radius: 100%;
     }
-
-    // &.portfolio {
-    //   transition: all 0.8s ease;
-
-    //   .icon {
-    //     background-image: url(https://rafaelavlucas.github.io/assets/codepen/link.svg);
-    //   }
-    // }
-
-    // &.dribbble {
-    //   transition: all 0.3s ease;
-    //   .icon {
-    //     background-image: url(https://rafaelavlucas.github.io/assets/codepen/dribbble.svg);
-    //   }
-    // }
-
-    // &.linkedin {
-    //   transition: all 0.8s ease;
-    //   .icon {
-    //     background-image: url(https://rafaelavlucas.github.io/assets/codepen/linkedin.svg);
-    //   }
-    // }
   }
 
   &:hover {
@@ -106,28 +84,6 @@
           opacity: 1;
         }
       }
-
-      // &.portfolio {
-      //   right: 0;
-      //   bottom: calc(100% - 40px);
-      //   transition: all 0.3s 0s $cubic;
-      //   .icon {
-      //     &:hover {
-      //       background-color: #ef8e76;
-      //     }
-      //   }
-      // }
-
-      // &.dribbble {
-      //   bottom: 45%;
-      //   right: 45%;
-      //   transition: all 0.3s 0.15s $cubic;
-      //   .icon {
-      //     &:hover {
-      //       background-color: #ea4c89;
-      //     }
-      //   }
-      // }
 
       &.linkedin {
         bottom: 0;
@@ -282,122 +238,7 @@ body {
   justify-content: space-around;
 }
 
-// STILE CARD
-
-/* Stile per la singola carta del libro */
-// .book {
-//   display: flex; /* Utilizza il layout flessibile */
-//   background-color: #fff; /* Sfondo bianco */
-//   border: 1px solid #ccc; /* Bordo grigio */
-//   border-radius: 10px; /* Bordo arrotondato */
-//   padding: 20px;
-//   margin: 10px;
-//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-//   transition: transform 0.2s;
-//   flex-direction: row; /* Imposta la direzione dei figli in riga */
-//   justify-content: space-between; /* Spazio tra gli elementi */
-//   align-items: center; /* Allinea il contenuto al centro verticalmente */
-//   text-align: center; /* Allinea il testo al centro */
-// }
-// /* Stile per l'immagine del libro */
-// .book img {
-//   max-width: 100px; /* Larghezza massima dell'immagine */
-//   height: auto;
-//   margin-bottom: 10px; /* Margine inferiore per separare l'immagine dal testo */
-// }
-
-// /* Stile per le etichette (Titolo, Autore, Anno) */
-// .book-label {
-//   font-weight: bold; /* Testo in grassetto */
-//   display: flex;
-//   flex-direction: column;
-//   margin-bottom: 13px;
-// }
-
-// /* Stile per il titolo, l'autore e l'anno */
-// .book-info {
-//   font-size: 16px;
-//   margin: 5px 0; /* Margine superiore e inferiore per separare il testo */
-// }
-
-// /* Stile per il pulsante di aggiunta al carrello */
-// .book button {
-//   background-color: #ef8e76; /* Sfondo viola */
-//   border: none;
-//   border-radius: 10px; /* Bordo arrotondato */
-//   color: #fff; /* Colore del testo bianco */
-//   padding: 5px 10px;
-//   cursor: pointer;
-// }
-
-// .book button:hover {
-//   background-color: #ef8e76; /* Cambia colore al passaggio del mouse */
-// }
-
-// /* Stile per rendere le carte responsive */
-// @media screen and (max-width: 768px) {
-//   .book {
-//     flex-basis: calc(
-//       50% - 20px
-//     ); /* Ingrandisci le carte per dispositivi più piccoli */
-//   }
-// }
-
-// ABBASTANZA BENE
-// .results-container {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-// }
-
-// .book {
-//   width: 100%;
-//   max-width: 300px;
-//   margin: 0 10px 20px;
-//   padding: 15px;
-//   border: 1px solid #ccc;
-//   border-radius: 5px;
-//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-//   background-color: #fff;
-// }
-
-// .book img {
-//   max-width: 100%;
-//   height: auto;
-// }
-
-// .book p {
-//   margin: 5px 0;
-// }
-
-// .book-label {
-//   font-weight: bold;
-// }
-
-// .book-info {
-//   font-weight: normal;
-// }
-
-// .book-description {
-//   font-style: italic;
-// }
-
-// button {
-//   background-color: #ef8e76;
-//   color: #fff;
-//   border: none;
-//   padding: 10px 20px;
-//   border-radius: 5px;
-//   cursor: pointer;
-//   transition: background-color 0.3s ease;
-//   margin-top: 10px;
-// }
-
-// button:hover {
-//   background-color: #f0b4a4;
-// }
-
-// PRECOMPILATI
+// CARD
 
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 $main-green: #ef8e76 !default;
@@ -435,7 +276,8 @@ a:hover {
 .postcard {
   flex-wrap: wrap;
   display: flex;
-
+  align-items: center; /* Centra verticalmente */
+  justify-content: center;
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
   border-radius: 10px;
   margin: 0 0 2rem 0;
@@ -444,6 +286,7 @@ a:hover {
   color: #454547;
 
   &.light {
+    margin-left: 2%;
     background-color: #f3dbd4;
   }
 
@@ -469,9 +312,10 @@ a:hover {
 
   .postcard__img {
     height: 380px;
-    width: 40%;
+    width: 35%; /* Riduci la larghezza */
     object-fit: cover;
     position: relative;
+    margin-right: -20px;
   }
 
   .postcard__img_link {
@@ -484,7 +328,7 @@ a:hover {
     width: 50px;
     height: 10px;
     margin: 10px 0;
-    border-radius: 5px;
+    border-radius: 2px;
     background-color: #f0b4a4;
     transition: width 0.2s ease;
   }
@@ -766,4 +610,17 @@ a:hover {
 }
 button {
   background-color: transparent;
+}
+/* Stile per spostare l'immagine a sinistra */
+.book-image {
+  width: 100%; /* Riduci la larghezza dell'immagine */
+  margin-left: -30%;
+  margin-right: 20px;
+}
+
+/* Stile per centrare l'intero blocco */
+.postcard {
+  display: flex; /* Utilizza flexbox */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra orizzontalmente */
 }
