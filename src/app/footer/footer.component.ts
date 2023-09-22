@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
+  //Data corrente
+  currentYear: number;
+
+  constructor() {
+    this.currentYear = new Date().getFullYear();
+  }
   // Funzione per gestire l'invio del modulo
   handleSubmit(event: Event) {
     event.preventDefault(); // Evita il comportamento predefinito del modulo (ricaricare la pagina)
@@ -26,7 +32,10 @@ export class FooterComponent {
       alert('Inserisci un indirizzo email valido.');
     }
   }
-
+  ngOnInit() {
+    // Ottieni l'anno corrente
+    this.currentYear = new Date().getFullYear();
+  }
   // Funzione per la convalida dell'email (esempio molto semplice)
   isValidEmail(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
