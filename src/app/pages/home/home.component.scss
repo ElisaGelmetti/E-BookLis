@@ -254,7 +254,7 @@ body {
 
   &__content {
     max-width: 1110px;
-    min-height: 600px;
+    min-height: 654px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -454,4 +454,20 @@ h1 {
   max-width: 70%; /* Larghezza massima dell'immagine al 100% del suo contenitore */
   max-height: 100%; /* Altezza massima dell'immagine al 100% del suo contenitore */
   object-fit: cover;
+}
+
+:host::ng-deep {
+  .carousel-control-next {
+    // display: none;
+    height: 50%;
+    margin-top: 10%;
+  }
+}
+
+:host::ng-deep {
+  .carousel-control-prev {
+    // display: none;
+    height: 50%;
+    margin-top: 10%;
+  }
 }

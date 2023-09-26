@@ -16,13 +16,9 @@ import { SearchComponent } from '../../components/footer/search/search.component
 export class CarrelloComponent {
   cartItems: any[] = []; //Questa è una variabile che rappresenta gli oggetti nel tuo carrello. Inizialmente, è un array vuoto.
   @Input() book: any = { showDescription: false }; //Questo è un input decorator che indica che book può essere passato come input a questo componente. Inizialmente, book è un oggetto con una proprietà showDescription impostata su false.
-  genres: { [key: string]: { booksWithDescription: any[] } } = {
-    horror: { booksWithDescription: [] },
-    fantasy: { booksWithDescription: [] },
-    avventura: { booksWithDescription: [] },
-  };
+  genres: { [key: string]: { booksWithDescription: any[] } } = {};
 
-  books: Item[] = []; //Questa variabile è un array di oggetti Item. Non sembra essere utilizzata nel codice che hai fornito.
+  books: Item[] = []; //Questa variabile è un array di oggetti Item.
   private carrelloItems: any[] = []; // Questa variabile privata è un array che tiene traccia degli oggetti aggiunti al carrello. Viene utilizzata nel metodo addToCart.
   selectedBook: any; //Questa variabile tiene traccia del libro selezionato per mostrare i dettagli.
   showDetailsAlert: boolean = false; // Questa variabile booleana indica se mostrare o nascondere l'alert dei dettagli del libro.
@@ -31,16 +27,11 @@ export class CarrelloComponent {
   constructor(private http: HttpClient, private router: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.loadBooks('horror');
-    this.loadBooks('fantasy');
-    this.loadBooks('avventura');
     const book = localStorage.getItem('usercarrello');
     if (book) this.books.push(JSON.parse(book));
     console.log('Aggiunto nella Wishlist', this.books);
     this.book = this.router.snapshot;
   }
-  //Nel metodo ngOnInit(), stai inizializzando il componente. Carichi i libri per i generi "horror", "fantasy" e "avventura"
-  // e ottieni anche l'input del libro dalla route attiva.
 
   loadBooks(genre: string) {
     this.http
@@ -79,7 +70,7 @@ export class CarrelloComponent {
     this.carrelloItems.push(book);
 
     // Effettua una richiesta PUT per aggiornare il carrello dell'utente sul server
-    const userId = 'user123'; // Sostituisci con l'ID dell'utente corrente
+    const userId = 'Elisa'; // Sostituisci con l'ID dell'utente corrente
     this.http
       .put('/api/user/cart', { userId, books: this.carrelloItems })
       .subscribe(
