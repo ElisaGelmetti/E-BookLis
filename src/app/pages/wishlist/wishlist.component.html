@@ -1,5 +1,5 @@
 <nav class="mainNav">
-  <div class="mainNav__logo">E-BOOKLIS</div>
+  <div class="mainNav__logo">E-BookLis</div>
   <div class="mainNav__links">
     <ul class="mainNav__links">
       <li>
@@ -7,7 +7,7 @@
       </li>
       <!-- <li><a class="mainNav__link" routerLink="/card">Card</a></li> -->
       <li><a class="mainNav__link" routerLink="/search">Ricerca</a></li>
-      <!-- <li><a class="mainNav__link" routerLink="/wishlist">Wish List</a></li> -->
+      <li><a class="mainNav__link" routerLink="/wishlist">LIBRERIA</a></li>
 
       <li><a class="mainNav__link" routerLink="/carrello">Wishlist</a></li>
 
@@ -35,53 +35,547 @@
   </div>
 </nav>
 
-<h1>La tua lista desideri</h1>
+<!-- CARD -->
+<h1>La Tua Libreria</h1>
 
-<div *ngFor="let book of books; trackBy: trackByFn">
-  <section class="light">
-    <div class="container py-2">
-      <div class="h1 text-center text-dark" id="pageHeaderTitle"></div>
-
-      <article class="postcard light blue">
-        <a class="postcard__img_link" href="#">
-          <img
-            [src]="book.volumeInfo.imageLinks?.thumbnail"
-            alt="Copertina del libro"
-          />
-        </a>
-        <div class="postcard__text t-dark">
-          <h1 class="postcard__title blue">
-            <a href="#">{{ book.volumeInfo.title }}</a>
-          </h1>
-          <div class="postcard__subtitle small">
-            <time datetime="2020-05-25 ">
-              <i class="fas fa-calendar-alt mr-2"></i
-              >{{ book.volumeInfo.authors?.join(", ") || "Sconosciuto" }}
-            </time>
-          </div>
-          <div class="postcard__bar"></div>
-          <div class="postcard__preview-txt">
-            {{ book.volumeInfo.description }}
-          </div>
-          <ul class="postcard__tagbox">
-            <li class="tag__item">
-              <i class="fas fa-tag mr-2"></i>{{ book.volumeInfo.categories }}
-            </li>
-            <li class="tag__item">
-              <i class="fas fa-clock mr-2"></i
-              >{{ book.volumeInfo.publishedDate }}
-            </li>
-            <li class="tag__item play blue">
-              <button
-                class="btn btn-outline-danger"
-                (click)="removeFromWishlist(book)"
-              >
-                <i class="fas fa-heart"></i> Rimuovi dalla Wishlist
-              </button>
-            </li>
-          </ul>
-        </div>
-      </article>
+<div class="scene">
+  <!-- Prima fila di card -->
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788831003384_0_536_0_75.jpg"
+        alt="Copertina libro 1"
+      />
     </div>
-  </section>
+    <div class="card__face card__face--back">
+      <h2>Harry Potter e la pietra filosofale <br />Vol. 1</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788831003391_0_536_0_75.jpg"
+        alt="Copertina libro 2"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>Harry Potter e la camera dei segreti. <br />Vol. 2</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788831003407_0_536_0_75.jpg"
+        alt="Copertina libro 3"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>Harry Potter e il prigioniero di Azkaban. <br />Vol. 3</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788831003414_0_536_0_75.jpg"
+        alt="Copertina libro 4"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Harry Potter e il calice di fuoco. <br />
+        Vol. 4
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788831003421_0_536_0_75.jpg"
+        alt="Copertina libro 5"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Harry Potter e l'Ordine della Fenice. <br />
+        Vol. 5
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788831003438_0_536_0_75.jpg"
+        alt="Copertina libro 6"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Harry Potter e il Principe Mezzosangue. <br />
+        Vol. 6
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <!-- Seconda fila di card -->
 </div>
+<div class="scene">
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788831003445_0_536_0_75.jpg"
+        alt="Copertina libro 7"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Harry Potter e i doni della morte. <br />
+        Vol. 7
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788804716624_0_536_0_75.jpg"
+        alt="Copertina libro 8"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Città di ossa. Shadowhunters. The mortal instruments. <br />
+        Vol. 1
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788804716631_0_536_0_75.jpg"
+        alt="Copertina libro 9"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Città di cenere. Shadowhunters. The mortal instruments. <br />
+        Vol. 2
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788804716648_0_536_0_75.jpg"
+        alt="Copertina libro 10"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Città di vetro. Shadowhunters. The mortal instruments. <br />
+        Vol. 3
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788804716655_0_536_0_75.jpg"
+        alt="Copertina libro 11"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Città degli angeli caduti. Shadowhunters. The mortal instruments. <br />
+        Vol. 4
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788804716679_0_536_0_75.jpg"
+        alt="Copertina libro 12"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Città delle anime perdute. Shadowhunters. The mortal instruments. <br />
+        Vol. 5
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+</div>
+
+<div class="scene">
+  <!-- TERZA fila di card -->
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788804716686_0_536_0_75.jpg"
+        alt="Copertina libro 13"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Città del fuoco celeste. Shadowhunters. The mortal instruments. <br />
+        Vol. 6
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788804716709_0_536_0_75.jpg"
+        alt="Copertina libro 14"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>Hunger games</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788804716723_0_536_0_75.jpg"
+        alt="Copertina libro 15"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>La ragazza di fuoco. Hunger games</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788804716716_0_536_0_75.jpg"
+        alt="Copertina libro 16"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>Il canto della rivolta. Hunger games</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/assets/loghi-serie/divergent-saga.jpg"
+        alt="Copertina libro 17"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>Divergent</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788851165741_0_536_0_75.jpg"
+        alt="Copertina libro 18"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>Insurgent</h2>
+      <button (click)="removeBook(books)">Rimuovi</button>
+    </div>
+  </div>
+</div>
+<div class="scene"></div>
+
+<div class="scene">
+  <!-- QUARTA fila di card -->
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788851165727_0_536_0_75.jpg"
+        alt="Copertina libro 19"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>Allegiant</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788851195533_0_536_0_75.jpg"
+        alt="Copertina libro 20"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Four <br />
+        Una scelta può liberarlo
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788820074449_0_536_0_75.jpg"
+        alt="Copertina libro 21"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>Fairy Tale</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788820077150_0_536_0_75.jpg"
+        alt="Copertina libro 22"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>Holly</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788868365622_0_536_0_75.jpg"
+        alt="Copertina libro 23"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>It</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788845295300_0_536_0_75.jpg"
+        alt="Copertina libro 24"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>Shining</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+</div>
+<div class="scene">
+  <!-- QUINTA fila di card -->
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788863809046_0_536_0_75.jpg"
+        alt="Copertina libro 25"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Silver. La trilogia dei sogni. <br />
+        Vol. 1
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788867000661_0_536_0_75.jpg"
+        alt="Copertina libro 26"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        La porta di Liv. Silver. La trilogia dei sogni. <br />
+        Vol. 2
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788863807042_0_536_0_75.jpg"
+        alt="Copertina libro 27"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        L' ultimo segreto. Silver. La trilogia dei sogni. <br />
+        Vol. 3
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788850229680_0_536_0_75.jpg"
+        alt="Copertina libro 28"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Red. La trilogia delle gemme. <br />
+        Vol. 1
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788850230884_0_536_0_75.jpg"
+        alt="Copertina libro 29"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Blue. La trilogia delle gemme. <br />
+        Vol. 2
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788863802849_0_536_0_75.jpg"
+        alt="Copertina libro 30"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        Green. La trilogia delle gemme. <br />
+        Vol. 3
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+</div>
+
+<div class="scene">
+  <!-- SESTA fila di card -->
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788834611852_0_536_0_75.jpg"
+        alt="Copertina libro 31"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>La verità sul caso Harry Quebert</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788869183461_0_536_0_75.jpg"
+        alt="Copertina libro 32"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>
+        La tetralogia di Bartimeus: L'anello di Salomone-L'amuleto di
+        Samarcanda-L'occhio del Golem-La porta di Tolomeo
+      </h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788804729235_0_536_0_75.jpg"
+        alt="Copertina libro 33"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>I pilastri della terra</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788850230877_0_536_0_75.jpg"
+        alt="Copertina libro 34"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>La trilogia dell'atlante di smeraldo</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788850252503_0_424_0_75.jpg"
+        alt="Copertina libro 35"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>L'atlante di fuoco</h2>
+      <button>Rimuovi</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        src="https://www.lafeltrinelli.it/images/9788850252510_0_536_0_75.jpg"
+        alt="Copertina libro 36"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <h2>L'atlante di tenebra</h2>
+      <button (click)="removeBook(books)">Rimuovi</button>
+    </div>
+  </div>
+</div>
+<div class="scene"></div>
+<app-footer></app-footer>

@@ -1,5 +1,5 @@
+// NAV
 @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
-
 .about {
   $cubic: cubic-bezier(0.64, 0.01, 0.07, 1.65);
   $transition: 0.6s $cubic;
@@ -14,6 +14,7 @@
   justify-content: flex-end;
   align-items: flex-end;
   transition: all 0.2s ease;
+  font-weight: 700;
 
   .bg_links {
     width: $size;
@@ -32,7 +33,7 @@
     width: $size;
     height: $size;
     z-index: 9;
-    // background-image: url(https://rafaelavlucas.github.io/assets/codepen/logo_white.svg);
+
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: 10px 7px;
@@ -98,8 +99,7 @@
     }
   }
 }
-
-@import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
 
 $font-01: "Raleway", sans-serif;
 
@@ -200,42 +200,48 @@ body {
   }
 }
 
-// #ffd7c9 #ef8e76
+// SEARCH
 
+/* Stile del contenitore di ricerca */
 .search-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #fbdcd1; /* Sfondo rosa chiaro */
-  border-radius: 10px; /* Bordo arrotondato */
-  padding: 10px;
-  margin-bottom: 20px;
-  margin-top: 8px; /* Abbassa la barra del 30% */
+  margin: 2% 0;
+  background-color: #fabbab;
+  padding: 1%;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 20px;
+  margin-top: 10px;
 }
 
 /* Stile per l'input di ricerca */
-.search-container input {
-  border: 1px solid#ef8e76; /* Bordo viola */
-  border-radius: 10px; /* Bordo arrotondato */
-  padding: 10px;
-  margin-right: 10px;
-  width: 70%; /* Larghezza percentuale per adattarsi al contenuto */
+.search-container input[type="text"] {
+  flex: 1;
+  padding: 5px;
+  border: 2px solid #e07256; /* Bordo viola */
+  border-radius: 20px; /* Bordo arrotondato */
+  font-size: 16px;
+  outline: none; /* Rimuove l'outline del focus */
+  height: 3rem;
 }
 
-/* Stile per il pulsante di ricerca */
+/* Stile per il bottone di ricerca */
 .search-container button {
-  background-color: #ef8e76;
-  border: 1px solid#ef8e76;
+  background-color: #e07256; /* Sfondo verde */
+  color: white; /* Testo bianco */
+  border: none;
+  margin-left: 30px;
   border-radius: 10px; /* Bordo arrotondato */
   padding: 10px 20px;
-  color: white;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Transizione colore di sfondo */
 }
 
-/* Stile per il container dei risultati */
-.results-container {
-  flex-wrap: wrap;
-  justify-content: space-around;
+/* Stile al passaggio del mouse sul bottone */
+.search-container button:hover {
+  background-color: #ef8e76; /* Cambia il colore di sfondo al passaggio del mouse */
 }
 
 // CARD

@@ -5,6 +5,10 @@ export interface Libri {
 }
 
 export interface Item {
+  imageLinks: any;
+  title: any;
+  authors: any;
+  description: any;
   kind: Kind;
   id: string;
   etag: string;
