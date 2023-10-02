@@ -121,7 +121,7 @@ export class WishlistComponent implements OnInit {
   getCarrelloItems() {
     return this.carrelloItems;
   }
-  removeFromCart(book: any) {
+  removeBook(book: any) {
     // Trova l'indice del libro nel carrello
     const index = this.books.indexOf(book);
 
