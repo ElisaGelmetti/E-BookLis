@@ -36,11 +36,11 @@
 </nav>
 
 <!-- CARD -->
-<h1>La Tua Libreria</h1>
+<!-- <h1>La Tua Libreria</h1>
 
-<div class="scene">
-  <!-- Prima fila di card -->
-  <div class="card">
+<div class="scene"> -->
+<!-- Prima fila di card -->
+<!-- <div class="card">
     <div class="card__face card__face--front">
       <img
         src="https://www.lafeltrinelli.it/images/9788831003384_0_536_0_75.jpg"
@@ -125,10 +125,10 @@
       </h2>
       <button>Rimuovi</button>
     </div>
-  </div>
+  </div> -->
 
-  <!-- Seconda fila di card -->
-</div>
+<!-- Seconda fila di card -->
+<!-- </div>
 <div class="scene">
   <div class="card">
     <div class="card__face card__face--front">
@@ -227,9 +227,9 @@
   </div>
 </div>
 
-<div class="scene">
-  <!-- TERZA fila di card -->
-  <div class="card">
+<div class="scene"> -->
+<!-- TERZA fila di card -->
+<!-- <div class="card">
     <div class="card__face card__face--front">
       <img
         src="https://www.lafeltrinelli.it/images/9788804716686_0_536_0_75.jpg"
@@ -312,9 +312,9 @@
 </div>
 <div class="scene"></div>
 
-<div class="scene">
-  <!-- QUARTA fila di card -->
-  <div class="card">
+<div class="scene"> -->
+<!-- QUARTA fila di card -->
+<!-- <div class="card">
     <div class="card__face card__face--front">
       <img
         src="https://www.lafeltrinelli.it/images/9788851165727_0_536_0_75.jpg"
@@ -395,9 +395,9 @@
     </div>
   </div>
 </div>
-<div class="scene">
-  <!-- QUINTA fila di card -->
-  <div class="card">
+<div class="scene"> -->
+<!-- QUINTA fila di card -->
+<!-- <div class="card">
     <div class="card__face card__face--front">
       <img
         src="https://www.lafeltrinelli.it/images/9788863809046_0_536_0_75.jpg"
@@ -494,9 +494,9 @@
   </div>
 </div>
 
-<div class="scene">
-  <!-- SESTA fila di card -->
-  <div class="card">
+<div class="scene"> -->
+<!-- SESTA fila di card -->
+<!-- <div class="card">
     <div class="card__face card__face--front">
       <img
         src="https://www.lafeltrinelli.it/images/9788834611852_0_536_0_75.jpg"
@@ -578,4 +578,23 @@
   </div>
 </div>
 <div class="scene"></div>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
+
+<h1>La Tua Libreria</h1>
+
+<div *ngFor="let book of books" class="cart-item">
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img
+        [src]="book.volumeInfo.imageLinks.thumbnail"
+        alt="Copertina libro 31"
+      />
+    </div>
+    <div class="card__face card__face--back">
+      <a href="#">{{ book.volumeInfo.title }}</a>
+      <li class="tag__item play blue">
+        <button (click)="removeFromCart(book)">Rimuovi</button>
+      </li>
+    </div>
+  </div>
+</div>

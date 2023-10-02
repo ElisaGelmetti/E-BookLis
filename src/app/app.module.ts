@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './pages/login/login.component';
-import { WishlistComponent } from './pages/wishlist/wishlist.component';
+import { WishlistComponent } from './pages/libreria/wishlist.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ApiService } from './api.services';
 

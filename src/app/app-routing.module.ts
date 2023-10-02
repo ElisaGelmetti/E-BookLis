@@ -9,7 +9,7 @@ import { CardComponent } from './pages/card/card.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { WishlistComponent } from './pages/wishlist/wishlist.component';
+import { WishlistComponent } from './pages/libreria/wishlist.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },

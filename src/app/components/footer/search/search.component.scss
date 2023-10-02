@@ -202,46 +202,46 @@ body {
 
 // SEARCH
 
-/* Stile del contenitore di ricerca */
 .search-container {
   display: flex;
   align-items: center;
-  margin: 2% 0;
+  margin-left: 5%;
+  margin-right: 5%;
   background-color: #fabbab;
-  padding: 1%;
-  margin-left: 2%;
-  margin-right: 2%;
+  padding: 20px 20px;
   border-radius: 20px;
   margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Stile per l'input di ricerca */
 .search-container input[type="text"] {
   flex: 1;
-  padding: 5px;
-  border: 2px solid #e07256; /* Bordo viola */
-  border-radius: 20px; /* Bordo arrotondato */
+  padding: 20px;
+  border: 2px solid #e07256;
+  border-radius: 20px;
   font-size: 16px;
-  outline: none; /* Rimuove l'outline del focus */
-  height: 3rem;
+  outline: none;
+  height: 2.5rem;
 }
 
 /* Stile per il bottone di ricerca */
 .search-container button {
-  background-color: #e07256; /* Sfondo verde */
-  color: white; /* Testo bianco */
+  background-color: #e07256;
+  color: white;
   border: none;
-  margin-left: 30px;
-  border-radius: 10px; /* Bordo arrotondato */
+  margin-left: 15px;
+  border-radius: 20px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Transizione colore di sfondo */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Stile al passaggio del mouse sul bottone */
 .search-container button:hover {
-  background-color: #ef8e76; /* Cambia il colore di sfondo al passaggio del mouse */
+  background-color: #ef8e76;
 }
 
 // CARD

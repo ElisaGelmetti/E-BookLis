@@ -1,19 +1,32 @@
-import { CartBook, Item } from '../../interfaces/libro';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Libri, VolumeInfo } from '../../interfaces/libro';
-import { Injectable } from '@angular/core';
+import { Item } from '../../interfaces/libro';
+import { ActivatedRoute } from '@angular/router';
 
-import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from '../../api.services';
-import { SearchComponent } from '../../components/footer/search/search.component';
 @Component({
-  selector: 'app-carrello',
-  templateUrl: './carrello.component.html',
-  styleUrls: ['./carrello.component.scss'],
+  selector: 'app-wishlist',
+  templateUrl: './wishlist.component.html',
+  styleUrls: ['./wishlist.component.scss'],
 })
-export class CarrelloComponent {
+export class WishlistComponent implements OnInit {
+  //   books: Item[] = [];
+  //   selectedGenre: string = 'fantasy';
+  //   cartItems: any[] = [];
+  //   private apiUrl = 'https://www.googleapis.com/books/v1/volumes';
+
+  //   constructor(private http: HttpClient, private router: ActivatedRoute) {}
+
+  //   ngOnInit(): void {}
+
+  //   removeBook(book: any): void {
+  //     // Rimuovi il libro dalla libreria
+  //     const index = this.books.indexOf(book);
+  //     if (index !== -1) {
+  //       this.books.splice(index, 1);
+  //     }
+  //   }
+  // }
+
   cartItems: any[] = []; //Questa è una variabile che rappresenta gli oggetti nel tuo carrello. Inizialmente, è un array vuoto.
   @Input() book: any = { showDescription: false }; //Questo è un input decorator che indica che book può essere passato come input a questo componente. Inizialmente, book è un oggetto con una proprietà showDescription impostata su false.
   genres: { [key: string]: { booksWithDescription: any[] } } = {};

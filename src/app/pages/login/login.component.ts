@@ -33,7 +33,11 @@ export class LoginComponent implements OnInit {
       this.signupUsers = JSON.parse(localData);
     }
   }
-
+  resetData() {
+    localStorage.removeItem('signUpUsers');
+    this.signupUsers = [];
+    alert('Dati eliminati con successo.');
+  }
   onSignUp() {
     console.log('Dati di registrazione inseriti:', this.signupObj);
 

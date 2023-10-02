@@ -17,6 +17,8 @@ export class SearchComponent {
   books: any = [];
   cartItems: any[] = []; // Inizializza un array per i libri nel carrello
   wishlistItems: any[] = []; //Aggiungi alla wishlist
+  // GENERE
+
   constructor(private http: HttpClient, private ApiService: ApiService) {}
 
   searchBooks() {
@@ -31,6 +33,8 @@ export class SearchComponent {
       console.log('Ricerca libri per:', this.searchTerm);
     });
   }
+
+  // GENERE
 
   ///////////////////////////////TROPPE CHIAMATE//////////////////
   // searchBooks() {
@@ -72,12 +76,13 @@ export class SearchComponent {
     this.cartItems.push(book);
     localStorage.setItem('usercarrello', JSON.stringify(book));
     console.log('Aggiunto nella Wishlist:', book.volumeInfo.title);
-    console.log('aiuto', this.cartItems);
+    console.log('Wishlist', this.cartItems);
   }
 
   addToWishlist(book: any) {
     this.wishlistItems.push(book);
-    localStorage.setItem('wishlist', JSON.stringify(book));
-    console.log('Aggiunto alla wishlist:', book.volumeInfo.title);
+    localStorage.setItem('Libreria', JSON.stringify(book));
+    console.log('Aggiunto alla Libreria:', book.volumeInfo.title);
+    console.log('Libreria', this.cartItems);
   }
 }

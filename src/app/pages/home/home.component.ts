@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   private apiUrl = 'https://www.googleapis.com/books/v1/volumes';
   private apiKey = 'AIzaSyCRXtIP3pECh9gnLWzSzoAYuxw1AHAfZWs';
   bookInfo: any; // Variabile per memorizzare le informazioni sul libro
-
+  cartResults: any[] = [];
   books = [
     {
       title: 'Harry Potter',
@@ -65,6 +65,7 @@ export class HomeComponent implements OnInit {
         }
       });
   }
+
   addToWishlist(book: any) {
     this.wishlistItems.push(book);
     localStorage.setItem('wishlist', JSON.stringify(book));
